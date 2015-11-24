@@ -11,21 +11,7 @@ set $ws7 "7: "
 set $ws8 "8: "
 set $ws9 "9: "
 set $ws0 "10: "
-# Atelier Cave
 
-#set $back               #2b303b
-#set $black              #343d46
-#set $grey               #373B41
-#set $lightgrey          #c0c5ce
-#set $white              #eff1f5
-#set $red                #bf616a
-#set $orange             #d08770
-#set $yellow             #ebcb8b
-#set $green              #a3be8c
-#set $teal               #96b5b4
-#set $bluegray           #8fa1b3
-#set $pink               #b48ead
-#set $brown              #ab7967
 # Colors base16 Ocean
 set $back               #2b303b
 set $black              #343d46
