@@ -1,0 +1,45 @@
+URxvt*.termName:            	          xterm-256color
+URxvt*.depth: 32
+URxvt*.background:                     [90]#151718
+URxvt*.foreground:                     #d6d6d6
+URxvt*.cursorColor:                    #d6d6d6
+
+URxvt*scrollColor:                    #d6d6d6
+URxvt*highlightColor:                 #3B758C
+URxvt*highlightTextColor:             #43a5d5
+URxvt*borderColor:                    #101218
+
+URxvt*color0:                         #151718
+URxvt*color1:                         #Cd3f45
+URxvt*color2:                         #9fca56
+URxvt*color3:                         #e6cd69
+URxvt*color4:                         #55b5db
+URxvt*color5:                         #a074c4
+URxvt*color6:                         #55dbbe
+URxvt*color7:                         #d6d6d6
+URxvt*color8:                         #41535B
+URxvt*color9:                         #Cd3f45
+URxvt*color10:                        #9fca56
+URxvt*color11:                        #e6cd69
+URxvt*color12:                        #55b5db
+URxvt*color13:                        #a074c4
+URxvt*color14:                        #55dbbe
+URxvt*color15:                        #ffffff
+
+! 256 color space
+URxvt*color16:                        #db7b55
+URxvt*color17:                        #8a553f
+URxvt*color18:                        #8ec43d
+URxvt*color19:                        #3B758C
+URxvt*color20:                        #43a5d5
+URxvt*color21:                        #eeeeee
+
+Xcursor.size: 16W
+URxvt.scrollBar: false
+URxvt.font: xft:Hack:size=11
+URxvt.url-launcher: /usr/bin/chromium-browser
+
+URxvt*loginShell:  true
+
+URxvt.internalBorder: 0
+URxvt.externalBorder: 0
