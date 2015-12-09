@@ -9,7 +9,7 @@ set $ws5 "5: "
 set $ws6 "6: "
 set $ws7 "7: "
 set $ws8 "8: "
-set $ws9 "9: "
+set $ws9 "9: "
 set $ws0 "10: "
 
 # Colors base16 Ocean
@@ -73,7 +73,7 @@ bindsym $mod+Shift+Up move up
 bindsym $mod+Shift+Right move right
 
 # split in horizontal orientation
-bindsym $mod+h split h
+#bindsym $mod+h split h
 
 # split in vertical orientation
 bindsym $mod+v split v
@@ -164,14 +164,15 @@ bar {
       	}
 }
 # Autostart
-exec_always /home/imrvelj/scripts/mouseacc.sh
-exec_always feh --bg-scale /home/imrvelj/Pictures/wall/wallhaven-21827.jpg
+exec_always xset m 0 0
+exec_always feh --bg-scale /rejd/assets/wall/hawk.jpg
 exec --no-startup-id compton -f
 
 # Assigning workspaces
 assign [class="Firefox"] $ws1
 assign [class="Atom"] $ws3
 assign [class="Chromium-browser"] $ws1
+assign [class="Skype"] $ws9
 
 #always floating
 for_window [class="Galculator"] floating enable
