@@ -26,13 +26,15 @@ set $blue               #348899
 # Fonts
 font pango:Lato 10
 
+for_window [class="^.*"] border pixel 3
 new_window pixel 2
 new_float pixel 2
 smart_borders on
+smart_gaps on
 
 #class                  border      backgr.     text        split
 
-client.focused          $red       $lightgrey       $grey      $pink
+client.focused          $red       $blue       $grey      $pink
 client.focused_inactive $red       $back       $lightgrey  $grey
 client.unfocused        $back       $back       $grey       $grey
 client.urgent           $red        $lightpurple        $black      $red
@@ -46,7 +48,7 @@ gaps inner $default_gaps_inner
 gaps outer $default_gaps_outer
 
 # start a terminal
-bindsym $mod+Return exec urxvt
+bindsym $mod+Return exec i3-sensible-terminal
 
 # kill focused window
 bindsym $mod+q kill
@@ -160,35 +162,34 @@ bar {
         height 25
         colors {
       		background  $back
-  	    	separator   $purple
+  	    	separator   $bluegray
           #                  border             background          text
-    		  focused_workspace  $purple            $purple             $whiteyellow
+    		  focused_workspace  $back            $back             $blue
       		inactive_workspace $back              $back               $whiteyellow
-      		urgent_workspace   $red               $red                $whiteyellow
+      		urgent_workspace   $back               $back                $red
       	}
 }
 # Autostart
 exec_always xset m 0 0
-exec_always feh --bg-scale /rejd/assets/wall/wow.jpg
+exec_always feh --bg-scale /rejd/wall/forest.jpg
+exec --no-startup-id nm-applet
 exec --no-startup-id compton -f
 
 # Assigning workspaces
+assign [class="chromium-browser"] $ws1
 assign [class="Atom"] $ws3
-assign [class="Chromium-browser"] $ws1
-assign [class="Skype"] $ws9
 assign [class="Wine"] $ws8
+assign [class="Skype"] $ws9
 
 #always floating
 for_window [class="Galculator"] floating enable
 for_window [class="Skype"] floating enable
 for_window [class="Wine"] floating enable
 for_window [class="Corebird"] floating enable
-for_window [class="^.*"] border pixel 3
 
 for_window [window_role="pop-up"] floating enable
 for_window [window_role="bubble"] floating enable
 for_window [window_role="task_dialog"] floating enable
 for_window [window_role="Preferences"] floating enable
-
 for_window [window_type="dialog"] floating enable
 for_window [window_type="menu"] floating enable
