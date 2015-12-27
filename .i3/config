@@ -22,7 +22,7 @@ set $bluegreen          #61C791
 set $green              #a5ffe1
 set $yellowgreen        #E0FFB3
 set $cyan               #97e0ff
-set $blue               #6d63e7
+set $blue               #2272b1
 set $darkpurple         #2c202d
 set $purple             #42282F
 set $red                #F23C55
