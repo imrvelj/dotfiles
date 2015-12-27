@@ -13,15 +13,20 @@ set $ws9 "9: "
 set $ws0 "10: "
 
 #COLORSCHEME#
-set $white              #f2f2f2
-set $whiteyellow        #F2EBC7
+set $white              #fefefe
 set $grey               #979C9C
+set $back               #31363D
+
 set $bluegray           #343642
-set $back               #161718
-set $purple             #512B52
+set $bluegreen          #61C791
+set $green              #a5ffe1
+set $yellowgreen        #E0FFB3
+set $cyan               #97e0ff
+set $blue               #6d63e7
 set $darkpurple         #2c202d
-set $red                #962D3E
-set $blue               #348899
+set $purple             #42282F
+set $red                #F23C55
+set $orange             #f99170
 
 # Fonts
 font pango:Lato 10
@@ -48,12 +53,12 @@ gaps inner $default_gaps_inner
 gaps outer $default_gaps_outer
 
 # start a terminal
-bindsym $mod+Return exec i3-sensible-terminal
+bindsym $mod+Return exec xfce4-terminal
 
 # kill focused window
 bindsym $mod+q kill
 
-bindsym $mod+d exec rofi -show run -lines 5 -eh 2 -width 100 -padding 400 -opacity "85" -bw 0 -bc "$darkpurple" -bg "$darkpurple" -fg "$white" -hlbg "$back" -hlfg "$whiteyellow" -font "Hack 18"
+bindsym $mod+d exec rofi -show run -lines 5 -eh 2 -width 60 -padding 50 -opacity "90" -bw 0 -bc "$back" -bg "$back" -fg "$white" -hlbg "$grey" -hlfg "$back" -font "Roboto Mono Regular 14"
 
 # change focus
 bindsym $mod+h focus left
@@ -156,22 +161,22 @@ mode "resize" {
 bindsym $mod+r mode "resize"
 
 bar {
-        font pango: Montserrat Light, Font Awesome 12
+        font pango: Roboto Mono Regular, Font Awesome 11
         position top
         status_command i3blocks -c /home/perpaer/.i3/i3blocks.conf
-        height 25
+        height 30
         colors {
       		background  $back
-  	    	separator   $bluegray
+  	    	separator   $grey
           #                  border             background          text
-    		  focused_workspace  $back            $back             $blue
-      		inactive_workspace $back              $back               $whiteyellow
-      		urgent_workspace   $back               $back                $red
+    		  focused_workspace  $back              $back              $blue
+      		inactive_workspace $back              $back               $grey
+      		urgent_workspace   $back              $red                $back
       	}
 }
 # Autostart
 exec_always xset m 0 0
-exec_always feh --bg-scale /rejd/wall/forest.jpg
+exec_always feh --bg-scale /rejd/wall/yosemite.png
 exec --no-startup-id nm-applet
 exec --no-startup-id compton -f
 
