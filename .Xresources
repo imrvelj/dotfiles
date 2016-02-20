@@ -37,7 +37,7 @@ URxvt*color21:                        #eeeeee
 Xcursor.size: 16W
 URxvt.scrollBar: false
 URxvt.font: xft:Hack:size=11
-URxvt.url-launcher: /usr/bin/firefox
+URxvt.url-launcher: /usr/bin/chromium-browser
 
 URxvt*loginShell:  true
 

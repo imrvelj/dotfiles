@@ -76,12 +76,12 @@ source $ZSH/oh-my-zsh.sh
 
 ## aliases ##
 # GIT #
-alias giting='git fetch && git pull'
-alias gc='git commit'
-alias gcl='git clone'
-# GENERIC #
-alias apdejt='sudo aptitude update && sudo aptitude upgrade -y'
+alias giting="git fetch && git pull"
+alias gaa="git add ."
+alias gc="git commit"
+alias gp="git push"
 
+alias apdejt="sudo aptitude update && sudo aptitude upgrade -y"
 
 export NVM_DIR="/home/perpaer/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
