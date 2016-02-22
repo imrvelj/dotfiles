@@ -1,11 +1,12 @@
 # Path to your oh-my-zsh installation.
-  export ZSH=/home/perpaer/.oh-my-zsh
+export ZSH=/home/rejd/.oh-my-zsh
 
 # Set name of the theme to load.
 # Look in ~/.oh-my-zsh/themes/
 # Optionally, if you set this to "random", it'll load a random theme each
 # time that oh-my-zsh is loaded.
-ZSH_THEME="robbyrussell"
+ZSH_THEME="agnoster"
+DEFAULT_USER=`whoami`
 
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
@@ -83,5 +84,5 @@ alias gp="git push"
 
 alias apdejt="sudo aptitude update && sudo aptitude upgrade -y"
 
-export NVM_DIR="/home/perpaer/.nvm"
+export NVM_DIR="/home/rejd/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
