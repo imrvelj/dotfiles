@@ -3,3 +3,5 @@
 	email = sk8raid@gmail.com
 [push]
 	default = simple
+[core]
+	autocrlf = input

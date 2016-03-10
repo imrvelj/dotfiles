@@ -32,10 +32,9 @@ alias giting="git fetch && git pull"
 alias gaa="git add ."
 alias gc="git commit"
 alias gp="git push"
-alias vim="nvim"
 alias dev="cd /storage/dev/projects/"
 
-alias apdejt="sudo aptitude update && sudo aptitude upgrade -y"
+alias apdejt="sudo apt update && sudo apt upgrade -y"
 
 export NVM_DIR="/home/rejd/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
