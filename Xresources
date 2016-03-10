@@ -7,7 +7,7 @@ URxvt*highlightTextColor:             #43a5d5
 URxvt*borderColor:                    #101218
 
 
-URxvt*background: [90]#212121
+URxvt*background: [95]#212121
 URxvt*foreground: #d9e6f2
 
 URxvt*color0: #000000
