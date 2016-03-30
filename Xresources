@@ -7,7 +7,7 @@ URxvt*highlightTextColor:             #43a5d5
 URxvt*borderColor:                    #101218
 
 
-URxvt*background: [95]#212121
+URxvt*background: #2F343F
 URxvt*foreground: #d9e6f2
 
 URxvt*color0: #000000
@@ -18,7 +18,7 @@ URxvt*color4: #4373a2
 URxvt*color5: #7343a2
 URxvt*color6: #43a273
 URxvt*color7: #d0d0d0
-URxvt*color8: #212121
+URxvt*color8: #2F343F
 URxvt*color9: #c46f99
 URxvt*color10: #99c46f
 URxvt*color11: #c4996f
@@ -29,9 +29,9 @@ URxvt*color15: #dddddd
 
 Xcursor.size: 16W
 URxvt.scrollBar: false
-URxvt.font: xft:Hack:size=11
+URxvt.font: xft:DejaVu Sans Mono for Powerline:size=12
 URxvt.url-launcher: /usr/bin/chromium-browser
-URxvt*iconFile:            /usr/share/icons/Numix-Circle/48x48/apps/gnome-terminal.svg
+URxvt*iconFile: /usr/share/icons/Numix-Circle/48x48/apps/gnome-terminal.svg
 
 URxvt*loginShell:  true
 
