@@ -1,4 +1,4 @@
-call plug#begin('~/.vim/plugged')
+call plug#begin('~/.config/nvim/plugged')
 
 Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
 Plug 'whatyouhide/vim-gotham'
@@ -6,6 +6,7 @@ Plug 'othree/yajs.vim'
 Plug 'kien/ctrlp.vim'
 Plug 'bling/vim-airline'
 Plug 'w0ng/vim-hybrid'
+Plug 'Shougo/deoplete.nvim'
 
 
 call plug#end()
@@ -56,4 +57,6 @@ let g:airline_right_alt_sep = ''
 let g:airline_symbols.branch = ''
 let g:airline_symbols.readonly = ''
 let g:airline_symbols.linenr = ''
+
+let g:deoplete#enable_at_startup = 1
 

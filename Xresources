@@ -10,7 +10,7 @@ URxvt*borderColor:                    #101218
 URxvt*background: #2F343F
 URxvt*foreground: #d9e6f2
 
-URxvt*color0: #000000
+URxvt*color0: #222222
 URxvt*color1: #a24373
 URxvt*color2: #73a243
 URxvt*color3: #a27343
