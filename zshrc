@@ -5,7 +5,7 @@ ZSH_THEME="agnoster"
 DEFAULT_USER=`whoami`
 
 
-plugins=(git npm bower tmux vi-mode)
+plugins=(git npm bower tmux laravel4)
 
 export PATH="$HOME/.composer/vendor/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games"
 
@@ -29,5 +29,8 @@ alias vimer="vim ."
 export NVM_DIR="/home/rejd/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
 
-#RVM
+#ruby
 export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
+export PATH="$HOME/.rbenv/bin:$PATH"
+eval "$(rbenv init -)"
+export PATH="$HOME/.rbenv/plugins/ruby-build/bin:$PATH"
