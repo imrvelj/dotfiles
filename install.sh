@@ -1,7 +1,7 @@
 #!/bin/bash
 
-dir=/storage/dev/projects/dotfiles
-olddir=/home/rejd/dotfiles_old
+dir=${HOME}/dev/projects/dotfiles
+olddir=${HOME}/dotfiles_old
 files="zshrc Xresources tmux.conf gitconfig"
 
 echo "Creating $olddir for backup of any existing dotfiles in ~"
