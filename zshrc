@@ -5,7 +5,7 @@ ZSH_THEME="agnoster"
 DEFAULT_USER=`whoami`
 
 
-plugins=(git npm bower tmux laravel4)
+plugins=(git npm tmux symfony2)
 
 export PATH="$HOME/.composer/vendor/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games"
 
