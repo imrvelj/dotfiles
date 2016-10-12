@@ -1,7 +1,7 @@
 # Path to your oh-my-zsh installation.
-export ZSH=/home/rejd/.oh-my-zsh
+export ZSH=$HOME/.oh-my-zsh
 
-ZSH_THEME="agnoster"
+ZSH_THEME="spaceship"
 DEFAULT_USER=`whoami`
 
 
@@ -16,7 +16,7 @@ alias giting="git fetch && git pull"
 alias gaa="git add ."
 alias gc="git commit"
 alias gp="git push"
-alias dev="cd /storage/dev/projects/"
+alias dev="cd $HOME/dev/projects/"
 
 #Ubuntu
 alias apdejt="sudo apt update && sudo apt upgrade"
@@ -26,5 +26,5 @@ alias apti="sudo apt install"
 alias vimer="vim ."
 
 #NVM
-export NVM_DIR="/home/rejd/.nvm"
+export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
