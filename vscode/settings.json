@@ -1,0 +1,26 @@
+{
+    "editor.fontFamily": "'Iosevka'",
+    "editor.fontSize": 14,
+    "editor.fontLigatures": true,
+    "files.autoSave": "onFocusChange",
+    "gitlens.blame.annotation.activeLine": "off",
+    "gitlens.codeLens.visibility": "ondemand",
+    "workbench.colorTheme": "One Monokai",
+    "workbench.iconTheme": "file-icons",
+    "editor.renderIndentGuides": true,
+    "window.menuBarVisibility": "toggle",
+    "editor.cursorBlinking": "solid",
+    "editor.rulers": [80],
+    "telemetry.enableTelemetry": false,
+    "workbench.activityBar.visible": false,
+    "search.exclude": {
+        "**/.tmp": true,
+        "**/tmp": true,
+        "**/dist": true,
+        "**/public": true,
+        "**/www": true,
+        "**/coverage": true,
+        "**/node_modules": true,
+        "**/bower_components": true
+    }
+}
