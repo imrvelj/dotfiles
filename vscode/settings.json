@@ -1,5 +1,5 @@
 {
-    "editor.fontFamily": "'Iosevka'",
+    "editor.fontFamily": "'Fantasque Sans Mono'",
     "editor.fontSize": 14,
     "editor.fontLigatures": true,
     "files.autoSave": "onFocusChange",
@@ -10,14 +10,20 @@
     "editor.renderIndentGuides": true,
     "window.menuBarVisibility": "toggle",
     "editor.cursorBlinking": "solid",
-    "editor.rulers": [80],
+    "editor.rulers": [120],
     "telemetry.enableTelemetry": false,
+    "php.suggest.basic": false,
     "workbench.activityBar.visible": false,
+    "workbench.colorCustomizations": {
+        "sideBar.background": "#2c323c",
+        "editorGroupHeader.tabsBackground": "#282c34"
+    },
     "search.exclude": {
         "**/.tmp": true,
         "**/tmp": true,
         "**/dist": true,
         "**/public": true,
+        "**/vendor": true,
         "**/www": true,
         "**/coverage": true,
         "**/node_modules": true,
