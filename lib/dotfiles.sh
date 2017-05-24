@@ -24,4 +24,12 @@ function dotfiles {
     else
         echo "✅ gitconfig config already installed!"
     fi
+
+    # vscode
+    if ! [ -e $HOME/.config/Code/User/settings.json ]; then
+        ln -s $PWD/vscode/settings.json $HOME/.config/Code/User/settings.json
+        echo "✅ vscode settings linked!"
+    else
+        echo "✅ vscode settings already installed!"
+    fi
 }

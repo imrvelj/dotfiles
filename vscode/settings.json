@@ -1,23 +1,23 @@
 {
-    "editor.fontFamily": "'Fantasque Sans Mono'",
+    "editor.fontFamily": "'Iosevka'",
     "editor.fontSize": 14,
     "editor.fontLigatures": true,
     "files.autoSave": "onFocusChange",
     "gitlens.blame.annotation.activeLine": "off",
     "gitlens.codeLens.visibility": "ondemand",
-    "workbench.colorTheme": "One Monokai",
+    "workbench.colorTheme": "Plastic - deprioritised punctuation",
     "workbench.iconTheme": "file-icons",
     "editor.renderIndentGuides": true,
     "window.menuBarVisibility": "toggle",
     "editor.cursorBlinking": "solid",
     "editor.rulers": [120],
     "telemetry.enableTelemetry": false,
-    "php.suggest.basic": false,
+    "php.suggest.basic": false, // Intelephense takes care of this
     "workbench.activityBar.visible": false,
-    "workbench.colorCustomizations": {
-        "sideBar.background": "#2c323c",
-        "editorGroupHeader.tabsBackground": "#282c34"
-    },
+    // "workbench.colorCustomizations": {
+    //     "sideBar.background": "#2c323c",
+    //     "editorGroupHeader.tabsBackground": "#282c34"
+    // },
     "search.exclude": {
         "**/.tmp": true,
         "**/tmp": true,
@@ -28,5 +28,6 @@
         "**/coverage": true,
         "**/node_modules": true,
         "**/bower_components": true
-    }
+    },
+    "todohighlight.isEnable": false
 }
