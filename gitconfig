@@ -5,3 +5,6 @@
 	default = simple
 [core]
 	autocrlf = input
+	editor = nvim
+[diff]
+	tool = meld

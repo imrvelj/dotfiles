@@ -1,7 +1,7 @@
 # Path to your oh-my-zsh installation.
 export ZSH=$HOME/.oh-my-zsh
 
-ZSH_THEME="agnoster"
+ZSH_THEME="lambda"
 DEFAULT_USER=`whoami`
 
 plugins=(git npm tmux symfony2)
@@ -17,13 +17,25 @@ alias gc="git commit"
 alias gp="git push"
 alias dev="cd $HOME/dev/projects/"
 
-# Arch
-alias apdejt="sudo pacman -Syu"
+# Ubuntu
+alias apdejt="sudo apt update && sudo apt upgrade"
+alias apti="sudo apt install"
 
 # Neovim
 alias v="nvim"
 alias vim="nvim"
 
+alias sdpkgi="sudo dpkg -i"
+alias tns="tmux new -s"
+alias yarnd="yarn add"
+alias yarndv="yarn add --dev"
+alias yarng="yarn global add"
+
 #NVM
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+
+source "/home/rejd/.oh-my-zsh/custom/themes/spaceship.zsh-theme"
+
