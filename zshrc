@@ -9,13 +9,14 @@ plugins=(git npm tmux symfony2)
 export PATH="$HOME/.composer/vendor/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games"
 
 source $ZSH/oh-my-zsh.sh
+source $HOME/.fzf.zsh
 
 # Git
 alias giting="git fetch && git pull"
 alias gaa="git add ."
 alias gc="git commit"
 alias gp="git push"
-alias dev="cd $HOME/dev/projects/"
+alias dev="cd $HOME/projects/"
 
 # Ubuntu
 alias apdejt="sudo apt update && sudo apt upgrade"
@@ -38,4 +39,12 @@ export NVM_DIR="$HOME/.nvm"
 
 
 source "/home/rejd/.oh-my-zsh/custom/themes/spaceship.zsh-theme"
+
+# Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
+export PATH="$PATH:$HOME/.rvm/bin"
+
+# Android
+export ANDROID_HOME=$HOME/Android/Sdk
+export PATH=$PATH:$ANDROID_HOME/tools
+export PATH=$PATH:$ANDROID_HOME/platform-tools
 

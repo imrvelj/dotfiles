@@ -1,5 +1,5 @@
 {
-  "editor.fontFamily": "'Fira Code'",
+  "editor.fontFamily": "'Fira Code', 'Droid Sans Mono', 'DejaVu Sans Mono'",
   "editor.fontSize": 13,
   "terminal.integrated.fontSize": 13,
   "editor.fontLigatures": true,
@@ -53,8 +53,11 @@
     "suppressGitVersionWarning": false,
     "suppressLineUncommittedWarning": false,
     "suppressNoRepositoryWarning": false,
+    "suppressResultsExplorerNotice": false,
+    "suppressShowKeyBindingsNotice": true,
     "suppressUpdateNotice": true,
     "suppressWelcomeNotice": true
   },
-  "explorer.confirmDelete": false
+  "explorer.confirmDelete": false,
+  "git.confirmSync": false
 }
