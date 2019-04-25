@@ -1,6 +1,10 @@
 # Path to your oh-my-zsh installation.
 export ZSH=$HOME/.oh-my-zsh
+
 plugins=(git npm tmux symfony2)
+
+# Theme
+ZSH_THEME="oxide"
 
 source $ZSH/oh-my-zsh.sh
 source $HOME/.fzf.zsh
