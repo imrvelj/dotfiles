@@ -1,0 +1,5 @@
+vscode/.config/Code/
+!vscode/.config/keybindigs.json
+!vscode/.config/settings.json
+
+nvim/.config/nvim/.netrwhist

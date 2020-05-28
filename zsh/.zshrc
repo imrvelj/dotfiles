@@ -20,10 +20,12 @@ alias dev="cd $HOME/projects/"
 alias apdejt="sudo apt update && sudo apt upgrade"
 alias apti="sudo apt install"
 alias dpkgi="sudo dpkg -i"
+alias aptclean="sudo apt autoclean && sudo apt autoremove"
 
 # (Neo)Vim
 alias v="nvim"
 alias vim="nvim"
+alias vedit="nvim ~/.config/nvim/init.vim"
 
 # Tmux
 alias tns="tmux new -s"
@@ -46,3 +48,12 @@ export NVM_DIR="$HOME/.nvm"
 export ANDROID_HOME=$HOME/Android/Sdk
 export PATH=$PATH:$ANDROID_HOME/tools
 export PATH=$PATH:$ANDROID_HOME/platform-tools
+
+# Flutter
+
+export FLUTTER_HOME=$HOME/flutter
+export PATH=$PATH:$FLUTTER_HOME/bin
+
+# Deno
+export DENO_INSTALL="/home/rejd/.deno"
+export PATH="$DENO_INSTALL/bin:$PATH"
