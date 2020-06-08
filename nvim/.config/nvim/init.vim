@@ -7,8 +7,18 @@ Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'peitalin/vim-jsx-typescript'
 Plug 'vim-airline/vim-airline'
 Plug 'morhetz/gruvbox'
-" Plug 'scrooloose/nerdtree'
+Plug 'flrnprz/plastic.vim'
+Plug 'whatyouhide/vim-gotham'
+Plug 'airblade/vim-gitgutter'
 Plug 'styled-components/vim-styled-components', { 'branch': 'main' }
+Plug 'prettier/vim-prettier', {
+  \ 'do': 'yarn install',
+  \ 'for': ['javascript', 'typescript', 'css', 'less', 'scss', 'json', 'graphql', 'markdown', 'vue', 'yaml', 'html'] }
+Plug 'mattn/emmet-vim'
+Plug 'ap/vim-css-color'
+Plug 'omnisharp/omnisharp-vim'
+Plug 'dense-analysis/ale'
+Plug 'calviken/vim-gdscript3'
 call plug#end()
 
 set termguicolors
@@ -77,12 +87,23 @@ let g:user_emmet_settings = {
     \  },
   \}
 
+" ALE
+let g:ale_fixers = {
+ \ 'javascript': ['eslint']
+ \ }
+
+let g:ale_sign_error = '❌'
+let g:ale_sign_warning = '⚠️'
+
 " Keybinds
-map <C-n> :NERDTreeToggle<CR>
-map <C-p> :GFiles<CR>
-map <C-k> :Gcommit<CR>
+nmap <C-n> :NERDTreeToggle<CR>
+nmap <C-p> :GFiles<CR>
+nmap <C-f> :Rg<CR>
+nmap <C-k> :Gcommit<CR>
+nmap <leader>s :w<CR>
 nmap <leader>e :CocCommand explorer<CR>
 nmap <leader>gs :Gstatus<CR>
+nmap <leader>gd :Gdiff<CR>
 
 """""""
 " Coc "

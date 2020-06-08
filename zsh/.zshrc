@@ -57,3 +57,6 @@ export PATH=$PATH:$FLUTTER_HOME/bin
 # Deno
 export DENO_INSTALL="/home/rejd/.deno"
 export PATH="$DENO_INSTALL/bin:$PATH"
+
+# Dotnet
+export DOTNET_CLI_TELEMETRY_OPTOUT=1
