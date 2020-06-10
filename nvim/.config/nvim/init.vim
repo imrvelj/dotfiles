@@ -6,9 +6,6 @@ Plug 'junegunn/fzf.vim'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'peitalin/vim-jsx-typescript'
 Plug 'vim-airline/vim-airline'
-Plug 'morhetz/gruvbox'
-Plug 'flrnprz/plastic.vim'
-Plug 'whatyouhide/vim-gotham'
 Plug 'airblade/vim-gitgutter'
 Plug 'styled-components/vim-styled-components', { 'branch': 'main' }
 Plug 'prettier/vim-prettier', {
@@ -19,6 +16,8 @@ Plug 'ap/vim-css-color'
 Plug 'omnisharp/omnisharp-vim'
 Plug 'dense-analysis/ale'
 Plug 'calviken/vim-gdscript3'
+Plug 'wadackel/vim-dogrun'
+Plug 'morhetz/gruvbox'
 call plug#end()
 
 set termguicolors
@@ -67,7 +66,7 @@ filetype indent on
 
 syntax on
 syntax enable
-colorscheme gruvbox
+colorscheme dogrun
 
 let mapleader = ","
 

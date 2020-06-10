@@ -39,6 +39,8 @@ alias yarng="yarn global add"
 alias dockup="docker-compose up -d"
 alias dockkill="docker-compose kill"
 
+alias code="codium"
+
 #NVM
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm

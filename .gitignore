@@ -1,5 +1,5 @@
-vscode/.config/Code/
-!vscode/.config/keybindigs.json
-!vscode/.config/settings.json
+codium/.config/VSCodium/
+!codium/.config/VSCodium/User/keybindings.json
+!codium/.config/VSCodium/User/settings.json
 
 nvim/.config/nvim/.netrwhist
