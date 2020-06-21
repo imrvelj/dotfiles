@@ -32,7 +32,7 @@
   "emmet.includeLanguages": {
     "javascript": "javascriptreact"
   },
-  "workbench.colorTheme": "Plastic",
+  "workbench.colorTheme": "Electron",
   "explorer.confirmDragAndDrop": false,
   "gitlens.advanced.messages": {
     "suppressCommitHasNoPreviousCommitWarning": false,
@@ -48,7 +48,6 @@
   },
   "explorer.confirmDelete": false,
   "git.confirmSync": false,
-  "workbench.iconTheme": "file-icons",
   "git.enableSmartCommit": true,
   "git.autofetch": true,
   "[typescript]": {
@@ -76,5 +75,8 @@
   "[vue]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
-  "typescript.updateImportsOnFileMove.enabled": "always"
+  "typescript.updateImportsOnFileMove.enabled": "always",
+  "vsicons.dontShowNewVersionMessage": true,
+  "workbench.iconTheme": "file-icons",
+  "typescript.enablePromptUseWorkspaceTsdk": true
 }
