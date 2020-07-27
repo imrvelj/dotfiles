@@ -3,7 +3,6 @@ call plug#begin('~/.local/share/nvim/plugged')
 source ~/.config/nvim/plugins.vim
 call plug#end()
 
-set termguicolors
 set history=1000
 set encoding=utf8
 set ffs=unix,dos,mac
@@ -12,7 +11,6 @@ set nowb
 set noswapfile
 set backupcopy=yes
 set relativenumber
-set background=dark
 set autoread
 set lazyredraw
 set so=7
@@ -46,22 +44,41 @@ set foldlevelstart=99
 set foldcolumn=0
 set signcolumn=no
 
+set path+=**
+set wildmenu
+set wildignore+=**/node_modules/**
+set hidden
+
 filetype plugin on
 filetype indent on
 
 syntax on
 syntax enable
-colorscheme deep-space
+
+" colorscheme
+set t_Co=256
+set termguicolors
+set background=dark
+
+" let g:airline_theme='gruvbox_material'
+" let g:gruvbox_material_palette='mix'
+" colorscheme gruvbox-material
+
+let g:edge_style = 'neon'
+colorscheme edge
 
 let mapleader = ","
 
 " Emmet settings
 let g:user_emmet_leader_key='<C-y>'
 let g:user_emmet_settings = {
-  \  'javascript.jsx' : {
-    \      'extends' : 'jsx',
-    \  },
-  \}
+  \ 'javascript.jsx' : {
+  \     'extends' : 'jsx',
+  \  },
+  \ 'typescript' : {
+  \     'extends' : 'jsx',
+  \ },
+\}
 
 " ALE
 let g:ale_fixers = {
@@ -71,9 +88,16 @@ let g:ale_fixers = {
 let g:ale_sign_error = '❌'
 let g:ale_sign_warning = '⚠️'
 
+"""""""
+" Coc "
+"     "
+source ~/.config/nvim/coc.vim
+
 " Keybinds
 nmap <C-p> :GFiles<CR>
 nmap <C-f> :Rg<CR>
+nmap <C-g> :CocSearch<space>
+nnoremap <leader>prw :CocSearch <C-R>=expand("<cword>")<CR><CR>
 nmap <C-k> :Gcommit<CR>
 nmap <leader>s :w<CR>
 nmap <leader>e :CocCommand explorer<CR>
@@ -83,7 +107,5 @@ nmap <leader>gf :diffget //2<CR>
 nmap <leader>gj :diffget //3<CR>
 nnoremap <esc><esc> :silent! nohls<cr>
 
-"""""""
-" Coc "
-"     "
-source ~/.config/nvim/coc.vim
+command! -bang -nargs=* Rg call fzf#vim#grep("rg --column --line-number --no-heading --color=always --smart-case ".shellescape(<q-args>), 1, {'options': '--delimiter : --nth 4..'}, <bang>0)
+

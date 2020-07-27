@@ -3,6 +3,7 @@ Plug 'tpope/vim-commentary'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'sheerun/vim-polyglot'
 Plug 'peitalin/vim-jsx-typescript'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
@@ -17,7 +18,9 @@ Plug 'ap/vim-css-color'
 Plug 'omnisharp/omnisharp-vim'
 Plug 'dense-analysis/ale'
 Plug 'calviken/vim-gdscript3'
+
 " Color schemes
-Plug 'wadackel/vim-dogrun'
-Plug 'morhetz/gruvbox'
-Plug 'tyrannicaltoucan/vim-deep-space'
+Plug 'flrnd/plastic.vim'
+Plug 'sainnhe/gruvbox-material'
+Plug 'sainnhe/edge'
+

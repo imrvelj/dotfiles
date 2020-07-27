@@ -14,7 +14,9 @@ alias giting="git fetch && git pull"
 alias gaa="git add ."
 alias gc="git commit"
 alias gp="git push"
+alias glog="git log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative"
 alias dev="cd $HOME/projects/"
+alias code="codium"
 
 # Ubuntu
 alias apdejt="sudo apt update && sudo apt upgrade"
@@ -39,7 +41,8 @@ alias yarng="yarn global add"
 alias dockup="docker-compose up -d"
 alias dockkill="docker-compose kill"
 
-alias code="codium"
+alias restartpulse="pulseaudio --kill && pulseaudio"
+alias rmnode="find . -name "node_modules" -exec rm -rf '{}' + "
 
 #NVM
 export NVM_DIR="$HOME/.nvm"
@@ -62,3 +65,6 @@ export PATH="$DENO_INSTALL/bin:$PATH"
 
 # Dotnet
 export DOTNET_CLI_TELEMETRY_OPTOUT=1
+
+# Rust
+export PATH=$PATH:$HOME/.cargo/bin
