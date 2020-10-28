@@ -37,12 +37,27 @@ new_window pixel 2
 new_float pixel 2
 smart_borders on
 smart_gaps on
-set $default_gaps_inner 16
-set $default_gaps_outer 32
+set $default_gaps_inner 8
+set $default_gaps_outer 16
 gaps inner $default_gaps_inner
 gaps outer $default_gaps_outer
 
 floating_modifier $mod
+
+bar {
+  font pango: SF Pro Dislay Regular 11
+  position top
+  status_command i3blocks -c ~/.i3/i3blocks.conf
+  height 28
+  colors {
+    background  $back
+    separator   $grey
+    # border | background | text
+    focused_workspace  $independence              $independence              #111111
+    inactive_workspace $back              $back               $grey
+    urgent_workspace   $red              $red                $white
+  }
+}
 
 # --------
 # KEYBINDS
@@ -130,14 +145,14 @@ bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'Quit?' -b 'Yes' 'i3-msg exit
 
 # resize
 mode "resize" {
-        bindsym h resize shrink width 10 px
-        bindsym j resize grow height 10 px
-        bindsym k resize shrink height 10 px
-        bindsym l resize grow width 10 px
+  bindsym h resize shrink width 10 px
+  bindsym j resize grow height 10 px
+  bindsym k resize shrink height 10 px
+  bindsym l resize grow width 10 px
 
-        # back to normal: Enter or Escape
-        bindsym Return mode "default"
-        bindsym Escape mode "default"
+  # back to normal: Enter or Escape
+  bindsym Return mode "default"
+  bindsym Escape mode "default"
 }
 
 bindsym $mod+r mode "resize"
@@ -147,7 +162,6 @@ bindsym $mod+r mode "resize"
 # ---------
 # exec --no-startup-id compton -f
 exec_always feh --bg-scale /home/rejd/wall/wallhaven-73olje.jpg
-exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 
 # Assigning workspaces
 assign [class="firefox"] $ws1
