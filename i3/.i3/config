@@ -1,8 +1,7 @@
-# i3 config file (v4)
-# Variables
-
+# Mod key -> Super
 set $mod Mod4
 
+# Workspace names
 set $ws1 "I"
 set $ws2 "II"
 set $ws3 "III"
@@ -14,7 +13,7 @@ set $ws8 "VIII"
 set $ws9 "IX"
 set $ws0 "X"
 
-#COLORSCHEME#
+# Color scheme
 set $white      #fefefe
 set $grey       #979C9C
 set $back       #2D3142
@@ -22,48 +21,52 @@ set $red        #A5243D
 set $silver     #b0b0b0
 set $independence #4F5D75
 
-# Fonts
-font pango:SF Pro Display 10
-
-for_window [class="^.*"] border pixel 3
-new_window pixel 2
-new_float pixel 2
-smart_borders on
-smart_gaps on
-
-#class                  border      backgr.     text        split
-
-client.focused          $white        $independence       $grey       $silver
+# class | border | background  | text | split
+client.focused          $white      $independence       $grey       $silver
 client.focused_inactive $red        $back       $grey       $grey
 client.unfocused        $back       $back       $grey       $grey
 client.urgent           $red        $red     $black      $red
 client.background       $red
 
-floating_modifier $mod
+# Fonts
+font pango:SF Pro Display 10
 
-set $default_gaps_inner 6
-set $default_gaps_outer 4
+# Border, gap settings
+for_window [class="^.*"] border pixel 3
+new_window pixel 2
+new_float pixel 2
+smart_borders on
+smart_gaps on
+set $default_gaps_inner 16
+set $default_gaps_outer 32
 gaps inner $default_gaps_inner
 gaps outer $default_gaps_outer
 
-# start a terminal
+floating_modifier $mod
+
+# --------
+# KEYBINDS
+# --------
+
+# Terminal
 bindsym $mod+Return exec xfce4-terminal
 
-# kill focused window
+# Kill focused window
 bindsym $mod+q kill
 
+# Rofi
 bindsym $mod+d exec rofi -show drun -font "SF Pro Display 14" -hide-scrollbar \
   -show-icons -icon-theme Papirus \
   -color-window "#dddddd" \
   -color-normal "#b0b0b0"
 
-# change focus
+# Change focus
 bindsym $mod+h focus left
 bindsym $mod+j focus down
 bindsym $mod+k focus up
 bindsym $mod+l focus right
 
-# move focused window
+# Move focused window
 bindsym $mod+Shift+h move left
 bindsym $mod+Shift+j move down
 bindsym $mod+Shift+k move up
@@ -139,26 +142,12 @@ mode "resize" {
 
 bindsym $mod+r mode "resize"
 
-bar {
-        font pango: SF Pro Dislay Regular 11
-        position top
-        status_command i3blocks -c ~/.i3/i3blocks.conf
-        height 28
-        colors {
-      		background  $back
-  	    	separator   $grey
-          # border | background | text
-    		  focused_workspace  $independence              $independence              #111111
-      		inactive_workspace $back              $back               $grey
-      		urgent_workspace   $red              $red                $white
-      	}
-}
-
+# ---------
 # Autostart
-# exec_always xset m 0 0
+# ---------
 # exec --no-startup-id compton -f
 exec_always feh --bg-scale /home/rejd/wall/wallhaven-73olje.jpg
-exec --no-startup-id xrandr --output HDMI-A-0 --mode 2560x1440 --primary --rate 144
+exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 
 # Assigning workspaces
 assign [class="firefox"] $ws1

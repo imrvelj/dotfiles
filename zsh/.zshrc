@@ -16,7 +16,6 @@ alias gc="git commit"
 alias gp="git push"
 alias glog="git log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative"
 alias dev="cd $HOME/projects/"
-alias code="codium"
 
 # Ubuntu
 alias apdejt="sudo apt update && sudo apt upgrade"
