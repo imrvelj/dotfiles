@@ -1,0 +1,9 @@
+{
+    "workbench.colorTheme": "Pretentious Name - deprioritised punctuation",
+    "workbench.iconTheme": "file-icons",
+    "files.autoSave": "onFocusChange",
+    "editor.fontFamily": "'JetBrains Mono'",
+    "editor.fontSize": 13,
+    "editor.lineHeight": 26,
+    "git.enableSmartCommit": true
+}
