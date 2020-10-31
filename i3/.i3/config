@@ -1,0 +1,179 @@
+# Mod key -> Super
+set $mod Mod4
+
+# Workspace names
+set $ws1 "I"
+set $ws2 "II"
+set $ws3 "III"
+set $ws4 "IV"
+set $ws5 "V"
+set $ws6 "VI"
+set $ws7 "VII"
+set $ws8 "VIII"
+set $ws9 "IX"
+set $ws0 "X"
+
+# Color scheme
+set $white      #fefefe
+set $grey       #979C9C
+set $back       #2D3142
+set $red        #A5243D
+set $silver     #b0b0b0
+set $independence #4F5D75
+
+# class | border | background  | text | split
+client.focused          $white      $independence       $grey       $silver
+client.focused_inactive $red        $back       $grey       $grey
+client.unfocused        $back       $back       $grey       $grey
+client.urgent           $red        $red     $black      $red
+client.background       $red
+
+# Fonts
+font pango:SF Pro Display 10
+
+# Border, gap settings
+for_window [class="^.*"] border pixel 3
+new_window pixel 2
+new_float pixel 2
+smart_borders on
+smart_gaps on
+set $default_gaps_inner 8
+set $default_gaps_outer 16
+gaps inner $default_gaps_inner
+gaps outer $default_gaps_outer
+
+floating_modifier $mod
+
+bar {
+  font pango: SF Pro Dislay Regular 11
+  position top
+  status_command i3blocks -c ~/.i3/i3blocks.conf
+  height 28
+  colors {
+    background  $back
+    separator   $grey
+    # border | background | text
+    focused_workspace  $independence              $independence              #111111
+    inactive_workspace $back              $back               $grey
+    urgent_workspace   $red              $red                $white
+  }
+}
+
+# --------
+# KEYBINDS
+# --------
+
+# Terminal
+bindsym $mod+Return exec xfce4-terminal
+
+# Kill focused window
+bindsym $mod+q kill
+
+# Rofi
+bindsym $mod+d exec rofi -show drun -font "SF Pro Display 14" -hide-scrollbar \
+  -show-icons -icon-theme Papirus \
+  -color-window "#dddddd" \
+  -color-normal "#b0b0b0"
+
+# Change focus
+bindsym $mod+h focus left
+bindsym $mod+j focus down
+bindsym $mod+k focus up
+bindsym $mod+l focus right
+
+# Move focused window
+bindsym $mod+Shift+h move left
+bindsym $mod+Shift+j move down
+bindsym $mod+Shift+k move up
+bindsym $mod+Shift+l move right
+
+# split in horizontal orientation
+#bindsym $mod+h split h
+
+# split in vertical orientation
+bindsym $mod+v split v
+
+# enter fullscreen mode for the focused container
+bindsym $mod+f fullscreen toggle
+
+# change container layout (stacked, tabbed, toggle split)
+bindsym $mod+s layout stacking
+bindsym $mod+w layout tabbed
+bindsym $mod+e layout toggle split
+
+# toggle tiling / floating
+bindsym $mod+Shift+space floating toggle
+
+# change focus between tiling / floating windows
+bindsym $mod+space focus mode_toggle
+
+# focus the parent container
+bindsym $mod+a focus parent
+
+# focus the child container
+#bindsym $mod+d focus child
+
+# switch to workspace
+bindsym $mod+1 workspace $ws1
+bindsym $mod+2 workspace $ws2
+bindsym $mod+3 workspace $ws3
+bindsym $mod+4 workspace $ws4
+bindsym $mod+5 workspace $ws5
+bindsym $mod+6 workspace $ws6
+bindsym $mod+7 workspace $ws7
+bindsym $mod+8 workspace $ws8
+bindsym $mod+9 workspace $ws9
+bindsym $mod+0 workspace $ws0
+
+# move focused container to workspace
+bindsym $mod+Shift+1 move container to workspace $ws1
+bindsym $mod+Shift+2 move container to workspace $ws2
+bindsym $mod+Shift+3 move container to workspace $ws3
+bindsym $mod+Shift+4 move container to workspace $ws4
+bindsym $mod+Shift+5 move container to workspace $ws5
+bindsym $mod+Shift+6 move container to workspace $ws6
+bindsym $mod+Shift+7 move container to workspace $ws7
+bindsym $mod+Shift+8 move container to workspace $ws8
+bindsym $mod+Shift+9 move container to workspace $ws9
+bindsym $mod+Shift+0 move container to workspace $ws0
+
+# Reloading
+bindsym $mod+Shift+c reload
+bindsym $mod+Shift+r restart
+# exit
+bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'Quit?' -b 'Yes' 'i3-msg exit'"
+
+# resize
+mode "resize" {
+  bindsym h resize shrink width 10 px
+  bindsym j resize grow height 10 px
+  bindsym k resize shrink height 10 px
+  bindsym l resize grow width 10 px
+
+  # back to normal: Enter or Escape
+  bindsym Return mode "default"
+  bindsym Escape mode "default"
+}
+
+bindsym $mod+r mode "resize"
+
+# ---------
+# Autostart
+# ---------
+# exec --no-startup-id compton -f
+exec_always feh --bg-scale /home/rejd/wall/wallhaven-73olje.jpg
+
+# Assigning workspaces
+assign [class="firefox"] $ws1
+assign [class="Wine"] $ws8
+
+#always floating
+for_window [class="Galculator"] floating enable
+for_window [class="Wine"] floating enable
+for_window [class="steam"] floating enable
+for_window [window_role="pop-up"] floating enable
+for_window [window_role="bubble"] floating enable
+for_window [window_role="task_dialog"] floating enable
+for_window [window_role="Preferences"] floating enable
+for_window [window_type="dialog"] floating enable
+for_window [window_type="menu"] floating enable
