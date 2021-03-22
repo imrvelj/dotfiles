@@ -1,4 +1,8 @@
 {
   "explorer.icon.enableNerdfont": true,
-  "diagnostic.displayByAle": true
+  "diagnostic.displayByAle": true,
+  "codelens.enable": true,
+  "eslint.autoFixOnSave": true,
+  "eslint.format.enable": true,
+  "coc.preferences.formatOnSaveFiletypes": ["javascript", "javascriptreact", "typescript", "typescriptreact", "css"]
 }

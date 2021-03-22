@@ -1,3 +1,4 @@
+call plug#begin('~/.local/share/nvim/plugged')
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-commentary'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
@@ -18,9 +19,10 @@ Plug 'ap/vim-css-color'
 Plug 'omnisharp/omnisharp-vim'
 Plug 'dense-analysis/ale'
 Plug 'calviken/vim-gdscript3'
+Plug 'jiangmiao/auto-pairs'
 
 " Color schemes
 Plug 'flrnd/plastic.vim'
 Plug 'sainnhe/gruvbox-material'
 Plug 'sainnhe/edge'
-
+call plug#end()

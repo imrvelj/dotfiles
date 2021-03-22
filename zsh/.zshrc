@@ -42,6 +42,8 @@ alias dockkill="docker-compose kill"
 
 alias restartpulse="pulseaudio --kill && pulseaudio"
 alias rmnode="find . -name "node_modules" -exec rm -rf '{}' + "
+alias socketeer_staging="ssh -i \"/data/mrki-machina.pem\" ubuntu@ec2-18-198-111-186.eu-central-1.compute.amazonaws.com"
+alias socketeer_production="ssh -i \"/data/mrki-machina.pem\" ubuntu@ec2-18-198-68-249.eu-central-1.compute.amazonaws.com"
 
 #NVM
 export NVM_DIR="$HOME/.nvm"
@@ -67,3 +69,13 @@ export DOTNET_CLI_TELEMETRY_OPTOUT=1
 
 # Rust
 export PATH=$PATH:$HOME/.cargo/bin
+
+# tabtab source for serverless package
+# uninstall by removing these lines or running `tabtab uninstall serverless`
+[[ -f /home/rejd/projects/tellimer/monorepo/node_modules/tabtab/.completions/serverless.zsh ]] && . /home/rejd/projects/tellimer/monorepo/node_modules/tabtab/.completions/serverless.zsh
+# tabtab source for sls package
+# uninstall by removing these lines or running `tabtab uninstall sls`
+[[ -f /home/rejd/projects/tellimer/monorepo/node_modules/tabtab/.completions/sls.zsh ]] && . /home/rejd/projects/tellimer/monorepo/node_modules/tabtab/.completions/sls.zsh
+# tabtab source for slss package
+# uninstall by removing these lines or running `tabtab uninstall slss`
+[[ -f /home/rejd/projects/tellimer/monorepo/node_modules/tabtab/.completions/slss.zsh ]] && . /home/rejd/projects/tellimer/monorepo/node_modules/tabtab/.completions/slss.zsh
