@@ -17,16 +17,16 @@ alias gp="git push"
 alias glog="git log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative"
 alias dev="cd $HOME/projects/"
 
-# Ubuntu
-alias apdejt="sudo apt update && sudo apt upgrade"
-alias apti="sudo apt install"
+# Fedora
+alias apdejt="sudo dnf update"
+alias dnfi="sudo dnf install"
 alias dpkgi="sudo dpkg -i"
 alias aptclean="sudo apt autoclean && sudo apt autoremove"
 
 # (Neo)Vim
 alias v="nvim"
 alias vim="nvim"
-alias vedit="nvim ~/.config/nvim/init.vim"
+alias vedit="nvim ~/dotfiles/nvim/.config/nvim/init.vim"
 
 # Tmux
 alias tns="tmux new -s"
@@ -45,18 +45,20 @@ alias rmnode="find . -name "node_modules" -exec rm -rf '{}' + "
 alias socketeer_staging="ssh -i \"/data/mrki-machina.pem\" ubuntu@ec2-18-198-111-186.eu-central-1.compute.amazonaws.com"
 alias socketeer_production="ssh -i \"/data/mrki-machina.pem\" ubuntu@ec2-18-198-68-249.eu-central-1.compute.amazonaws.com"
 
+alias tellimervpn="sudo openvpn ~/tellimer.ovpn"
+
 #NVM
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
+export PATH=$PATH:$HOME/.local/bin
 # Android
 export ANDROID_HOME=$HOME/Android/Sdk
 export PATH=$PATH:$ANDROID_HOME/tools
 export PATH=$PATH:$ANDROID_HOME/platform-tools
 
 # Flutter
-
 export FLUTTER_HOME=$HOME/flutter
 export PATH=$PATH:$FLUTTER_HOME/bin
 

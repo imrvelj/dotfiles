@@ -1,0 +1,15 @@
+[general]
+base_currency = USD
+display = price
+
+[bitcoin]
+icon = 
+
+[ethereum]
+icon = 
+
+[cardano]
+icon = 
+
+[polkadot]
+icon = 

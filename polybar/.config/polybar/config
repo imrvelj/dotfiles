@@ -1,0 +1,199 @@
+;
+; Polybar config
+;
+
+[colors]
+background = #0C121D
+foreground = #F2F5EA
+foreground-alt = #F2F5EA
+primary = #247BA0
+secondary = #ffffff
+alert = #A6808C
+
+[bar/main]
+monitor = DisplayPort-2
+width = 101%
+height = 32
+;offset-x = 1%
+;offset-y = 1%
+radius = 1.0
+fixed-center = false
+
+background = ${colors.background}
+foreground = ${colors.foreground}
+
+line-size = 1
+line-color = #00564d
+
+border-size = 0
+border-color = #0D00564d
+
+padding-left = 2
+padding-right = 0
+
+module-margin-left = 1
+module-margin-right = 1
+
+font-0 = JetBrains Mono:style=Regular:pixelsize=10;2
+font-1 = FontAwesome:style=Regular:pixelsize=12;2
+font-2 = cryptocoins:style=Regular;0
+
+modules-left = i3
+modules-center = date 
+modules-right = pulseaudio crypto
+
+separator = |
+tray-position = right
+tray-padding = 2
+;tray-background = #0063ff
+
+wm-restack = i3
+
+;override-redirect = true
+
+scroll-up = i3wm-wsnext
+scroll-down = i3wm-wsprev
+
+cursor-click = pointer
+eursor-scroll = ns-resize
+
+[module/filesystem]
+type = internal/fs
+interval = 25
+
+mount-0 = /
+mount-1 = /data
+
+label-mounted =  %free%
+label-unmounted = %mountpoint% not mounted
+label-unmounted-foreground = ${colors.foreground-alt}
+
+[module/i3]
+type = internal/i3
+pin-workspaces = true
+index-sort = true
+reverse-scroll = false
+fuzzy-match = true
+format = <label-state>
+enable-ipc = true
+
+ws-icon-0 = 1: 
+ws-icon-1 = 2: 
+ws-icon-2 = 3: 
+ws-icon-3 = 4: 
+ws-icon-4 = 5:
+ws-icon-5 = 6:
+ws-icon-6 = 7:
+ws-icon-7 = 8:
+ws-icon-8 = 9: 
+
+label-separator = |
+label-mode-padding = 0
+label-mode-foreground = #000
+label-mode-background = ${colors.primary}
+label-focused-background = ${colors.background}
+label-focused-underline= ${colors.primary}
+label-focused-padding = 0
+label-urgent-background = ${colors.alert}
+label-urgent-padding = 1
+
+[module/cpu]
+type = internal/cpu
+interval = 2
+format-prefix = " "
+format-prefix-foreground = ${colors.foreground-alt}
+format-underline = #f90000
+label = %percentage:2%%
+
+[module/memory]
+type = internal/memory
+interval = 2
+format-prefix = "mem"
+format-prefix-foreground = ${colors.foreground-alt}
+format-underline = #4bffdc
+label = %percentage_used%%
+
+[module/eth]
+type = internal/network
+interface = enp3s0
+interval = 3.0
+format-connected-underline = #55aa55
+format-connected-prefix = " "
+format-connected-prefix-foreground = ${colors.foreground-alt}
+label-connected = %local_ip%
+format-disconnected =
+;format-disconnected = <label-disconnected>
+;format-disconnected-underline = ${self.format-connected-underline}
+;label-disconnected = %ifname% disconnected
+;label-disconnected-foreground = ${colors.foreground-alt}
+
+[module/date]
+type = internal/date
+interval = 1
+label = %date% %time%
+date = " %d/%m/%Y"
+date-alt = 
+time = %H:%M
+time-alt = %H:%M:%S
+format-prefix =  
+format-prefix-foreground = ${colors.foreground-alt}
+
+[module/pulseaudio]
+type = internal/pulseaudio
+format-volume = <label-volume> <bar-volume>
+label-volume =  %percentage%%
+label-volume-foreground = ${root.foreground}
+label-muted = ? muted
+label-muted-foreground = #666
+bar-volume-width = 10
+bar-volume-foreground-0 = #55aa55
+bar-volume-foreground-1 = #55aa55
+bar-volume-foreground-2 = #55aa55
+bar-volume-foreground-3 = #55aa55
+bar-volume-foreground-4 = #55aa55
+bar-volume-foreground-5 = #f5a70a
+bar-volume-foreground-6 = #ff5555
+bar-volume-gradient = false
+bar-volume-indicator = |
+bar-volume-indicator-font = 2
+bar-volume-fill = ─
+bar-volume-fill-font = 2
+bar-volume-empty = ─
+bar-volume-empty-font = 2
+bar-volume-empty-foreground = ${colors.foreground-alt}
+
+[module/powermenu]
+type = custom/menu
+expand-right = true
+format-spacing = 1
+label-open = 
+label-open-foreground = ${colors.secondary}
+label-close =  cancel
+label-close-foreground = ${colors.secondary}
+label-separator = |
+label-separator-foreground = ${colors.foreground-alt}
+menu-0-0 = reboot
+menu-0-0-exec = systemctl reboot
+menu-0-1 = power off
+menu-0-1-exec = systemctl poweroff
+
+[module/crypto]
+type = custom/script
+interval = 300
+exec = /home/rejd/.config/polybar/crypto.py
+
+
+[settings]
+screenchange-reload = true
+;compositing-background = xor
+;compositing-background = screen
+;compositing-foreground = source
+;compositing-border = over
+;pseudo-transparency = false
+
+[global/wm]
+margin-top = 5
+margin-bottom = 5
+
+; vim:ft=dosini
+

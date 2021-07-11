@@ -2,16 +2,15 @@
 set $mod Mod4
 
 # Workspace names
-set $ws1 "I"
-set $ws2 "II"
-set $ws3 "III"
-set $ws4 "IV"
-set $ws5 "V"
-set $ws6 "VI"
-set $ws7 "VII"
-set $ws8 "VIII"
-set $ws9 "IX"
-set $ws0 "X"
+set $ws1 "1: "
+set $ws2 "2: "
+set $ws3 "3: "
+set $ws4 "4: "
+set $ws5 "5:"
+set $ws6 "6:"
+set $ws7 "7:"
+set $ws8 "8:"
+set $ws9 "9: "
 
 # Color scheme
 set $white      #fefefe
@@ -25,7 +24,7 @@ set $independence #4F5D75
 client.focused          $white      $independence       $grey       $silver
 client.focused_inactive $red        $back       $grey       $grey
 client.unfocused        $back       $back       $grey       $grey
-client.urgent           $red        $red     $black      $red
+client.urgent           $red        $red     $back      $red
 client.background       $red
 
 # Fonts
@@ -37,43 +36,25 @@ new_window pixel 2
 new_float pixel 2
 smart_borders on
 smart_gaps on
-set $default_gaps_inner 8
-set $default_gaps_outer 16
+set $default_gaps_inner 4
+set $default_gaps_outer 6
 gaps inner $default_gaps_inner
 gaps outer $default_gaps_outer
 
 floating_modifier $mod
-
-bar {
-  font pango: SF Pro Dislay Regular 11
-  position top
-  status_command i3blocks -c ~/.i3/i3blocks.conf
-  height 28
-  colors {
-    background  $back
-    separator   $grey
-    # border | background | text
-    focused_workspace  $independence              $independence              #111111
-    inactive_workspace $back              $back               $grey
-    urgent_workspace   $red              $red                $white
-  }
-}
 
 # --------
 # KEYBINDS
 # --------
 
 # Terminal
-bindsym $mod+Return exec xfce4-terminal
+bindsym $mod+Return exec $HOME/.cargo/bin/alacritty
 
 # Kill focused window
 bindsym $mod+q kill
 
 # Rofi
-bindsym $mod+d exec rofi -show drun -font "SF Pro Display 14" -hide-scrollbar \
-  -show-icons -icon-theme Papirus \
-  -color-window "#dddddd" \
-  -color-normal "#b0b0b0"
+bindsym $mod+space exec rofi -show drun -hide-scrollbar -show-icons
 
 # Change focus
 bindsym $mod+h focus left
@@ -88,7 +69,7 @@ bindsym $mod+Shift+k move up
 bindsym $mod+Shift+l move right
 
 # split in horizontal orientation
-#bindsym $mod+h split h
+bindsym $mod+b split h
 
 # split in vertical orientation
 bindsym $mod+v split v
@@ -105,7 +86,7 @@ bindsym $mod+e layout toggle split
 bindsym $mod+Shift+space floating toggle
 
 # change focus between tiling / floating windows
-bindsym $mod+space focus mode_toggle
+bindsym $mod+Shift+f focus mode_toggle
 
 # focus the parent container
 bindsym $mod+a focus parent
@@ -156,24 +137,35 @@ mode "resize" {
 }
 
 bindsym $mod+r mode "resize"
+bindsym --release Print exec "scrot -m '/home/rejd/Pictures/screenshots/%s_%H%M_%d.%m.%Y_$wx$h.png'"
+bindsym --release Shift+Print exec "scrot -s '/home/rejd/Pictures/screenshots/%s_%H%M_%d%m%Y_$wx$h.png'"
 
 # ---------
 # Autostart
 # ---------
 # exec --no-startup-id compton -f
-exec_always feh --bg-scale /home/rejd/wall/wallhaven-73olje.jpg
+exec_always feh --bg-scale /data/wall/wallhaven-73olje.jpg
 
 # Assigning workspaces
 assign [class="firefox"] $ws1
-assign [class="Wine"] $ws8
+assign [class="Wine"] $ws9
+assign [class="Steam"] $ws9
 
 #always floating
 for_window [class="Galculator"] floating enable
 for_window [class="Wine"] floating enable
-for_window [class="steam"] floating enable
+for_window [class="Steam"] floating enable
+for_window [class="Lutris"] floating enable
 for_window [window_role="pop-up"] floating enable
 for_window [window_role="bubble"] floating enable
 for_window [window_role="task_dialog"] floating enable
 for_window [window_role="Preferences"] floating enable
 for_window [window_type="dialog"] floating enable
 for_window [window_type="menu"] floating enable
+
+
+# Polybar
+exec_always --no-startup-id $HOME/.config/polybar/launch.sh
+
+# Disable mouse acceleration
+exec_always --no-startup-id xinput --set-prop 14 'libinput Accel Profile Enabled' 0, 1
