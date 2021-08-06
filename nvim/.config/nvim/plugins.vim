@@ -25,10 +25,12 @@ Plug 'hrsh7th/nvim-compe'
 Plug 'kyazdani42/nvim-web-devicons'
 Plug 'kyazdani42/nvim-tree.lua'
 Plug 'L3MON4D3/LuaSnip'
+Plug 'kazhala/close-buffers.nvim'
 
 " Color schemes
 Plug 'flrnd/plastic.vim'
 Plug 'sainnhe/gruvbox-material'
 Plug 'sainnhe/edge'
 Plug 'sainnhe/sonokai'
+Plug 'ghifarit53/tokyonight-vim'
 call plug#end()

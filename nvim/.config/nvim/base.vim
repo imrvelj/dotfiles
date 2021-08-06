@@ -32,6 +32,8 @@ set laststatus=2
 set expandtab
 set smarttab
 set tabstop=2 shiftwidth=2
+set splitbelow
+set splitright
 
 " leader
 let mapleader = ","
@@ -57,7 +59,10 @@ syntax enable
 set t_Co=256
 set termguicolors
 set background=dark
-colorscheme gruvbox-material
+" colorscheme gruvbox-material
+colorscheme tokyonight
+
+let g:tokyonight_style = 'night'
 
 let g:gruvbox_material_palette='mix'
 command! -bang -nargs=* Rg call fzf#vim#grep("rg --column --line-number --no-heading --color=always --smart-case ".shellescape(<q-args>), 1, {'options': '--delimiter : --nth 4..'}, <bang>0)

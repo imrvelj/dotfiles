@@ -2,8 +2,6 @@
   "emmet.excludeLanguages": ["markdown", "typescriptreact"],
   "files.autoSave": "onFocusChange",
   "editor.fontFamily": "'Rec Mono Semicasual', 'JetBrainsMono Nerd Font', monospace",
-  "editor.fontSize": 13,
-  "editor.lineHeight": 32,
   "editor.tabSize": 4,
   "editor.cursorStyle": "line",
   "editor.insertSpaces": false,
@@ -20,7 +18,7 @@
     "[x]"
   ],
   "todo-tree.regex.regex": "(//|#|<!--|;|/\\*|^|^\\s*(-|\\d+.))\\s*($TAGS)",
-  "workbench.colorTheme": "Plastic",
+  "workbench.colorTheme": "Serendipity Dark",
   "workbench.iconTheme": "file-icons",
   "git.confirmSync": false,
   "git.autofetch": true,
@@ -59,5 +57,14 @@
   "[html]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
-  "explorer.confirmDragAndDrop": false
+  "explorer.confirmDragAndDrop": false,
+  "editor.lineHeight": 1.8,
+  "auto-rename-tag.activationOnLanguage": [
+    "html",
+    "xml",
+    "php",
+    "javascript",
+    "javascriptreact",
+    "typescriptreact"
+  ]
 }
