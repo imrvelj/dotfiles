@@ -18,7 +18,7 @@
     "[x]"
   ],
   "todo-tree.regex.regex": "(//|#|<!--|;|/\\*|^|^\\s*(-|\\d+.))\\s*($TAGS)",
-  "workbench.colorTheme": "Serendipity Dark",
+  "workbench.colorTheme": "Bearded Theme Monokai Metallian",
   "workbench.iconTheme": "file-icons",
   "git.confirmSync": false,
   "git.autofetch": true,
@@ -66,5 +66,9 @@
     "javascript",
     "javascriptreact",
     "typescriptreact"
-  ]
+  ],
+  "editor.fontSize": 13,
+  "[javascriptreact]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  }
 }

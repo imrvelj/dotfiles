@@ -2,10 +2,10 @@ set history=1000
 set encoding=utf8
 set ffs=unix,dos,mac
 set nobackup
+set number
 set nowb
 set noswapfile
 set backupcopy=yes
-set relativenumber
 set autoread
 set lazyredraw
 set so=7
@@ -34,6 +34,8 @@ set smarttab
 set tabstop=2 shiftwidth=2
 set splitbelow
 set splitright
+set exrc
+set cursorline
 
 " leader
 let mapleader = ","
@@ -65,5 +67,15 @@ colorscheme tokyonight
 let g:tokyonight_style = 'night'
 
 let g:gruvbox_material_palette='mix'
-command! -bang -nargs=* Rg call fzf#vim#grep("rg --column --line-number --no-heading --color=always --smart-case ".shellescape(<q-args>), 1, {'options': '--delimiter : --nth 4..'}, <bang>0)
 
+" Git gutter
+highlight GitGutterAdd guifg=#008800 ctermfg=Green
+highlight GitGutterDelete guifg=#880000 ctermfg=Red
+highlight GitGutterChange guifg=#bbbb00 ctermfg=Yellow
+let g:gitgutter_enabled=1
+let g:gitgutter_highlight_linenrs=1
+
+command! -bang -nargs=* Rg
+  \ call fzf#vim#grep(
+  \   'rg --column --line-number --no-heading --color=always --smart-case -- '.shellescape(<q-args>), 1,
+  \   fzf#vim#with_preview(), <bang>0)

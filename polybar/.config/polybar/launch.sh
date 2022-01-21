@@ -1,4 +1,9 @@
-#!/usr/bin/env bash
+#!/bin/sh
+
+DIR="$HOME/.config/polybar"
+
+killall -q polybar
 
 while pgrep -u $UID -x polybar >/dev/null; do sleep 1; done
-polybar main &
+
+polybar -q main -c "$DIR"/config.ini &
