@@ -1,7 +1,7 @@
 {
   "emmet.excludeLanguages": ["markdown", "typescriptreact"],
   "files.autoSave": "onFocusChange",
-  "editor.fontFamily": "'Rec Mono Semicasual', 'JetBrainsMono Nerd Font', monospace",
+  "editor.fontFamily": "'Rec Mono Semicasual', 'JetBrainsMono Nerd Font Mono', monospace",
   "editor.tabSize": 4,
   "editor.cursorStyle": "line",
   "editor.insertSpaces": false,
@@ -18,7 +18,7 @@
     "[x]"
   ],
   "todo-tree.regex.regex": "(//|#|<!--|;|/\\*|^|^\\s*(-|\\d+.))\\s*($TAGS)",
-  "workbench.colorTheme": "Bearded Theme Monokai Metallian",
+  "workbench.colorTheme": "Tokyo Night AltSynt",
   "workbench.iconTheme": "file-icons",
   "git.confirmSync": false,
   "git.autofetch": true,
@@ -70,5 +70,16 @@
   "editor.fontSize": 13,
   "[javascriptreact]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "terraform.languageServer": {
+    "external": true
+  },
+  "editor.unicodeHighlight.allowedCharacters": {
+    "–": true
+  },
+  "editor.linkedEditing": true,
+  "redhat.telemetry.enabled": false,
+  "[yaml]": {
+    "editor.defaultFormatter": "redhat.vscode-yaml"
   }
 }

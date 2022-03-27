@@ -1,6 +1,6 @@
 lua << EOF
 local nvim_lsp = require('lspconfig')
-local servers = { 'tsserver', 'clojure_lsp' }
+local servers = { 'tsserver', 'clojure_lsp', 'eslint' }
 
 local on_attach = function(client, bufnr)
     local function buf_set_keymap(...) vim.api.nvim_buf_set_keymap(bufnr, ...) end

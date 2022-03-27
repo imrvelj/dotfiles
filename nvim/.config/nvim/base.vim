@@ -63,9 +63,7 @@ set termguicolors
 set background=dark
 " colorscheme gruvbox-material
 colorscheme tokyonight
-
 let g:tokyonight_style = 'night'
-
 let g:gruvbox_material_palette='mix'
 
 " Git gutter

@@ -53,7 +53,7 @@ bindsym $mod+Return exec kitty
 bindsym $mod+q kill
 
 # Rofi
-bindsym $mod+space exec rofi -show drun -hide-scrollbar -show-icons -font "Recursive Mono Linear Static 12"
+bindsym $mod+space exec rofi -show drun
 
 # Change focus
 bindsym $mod+h focus left
@@ -147,15 +147,16 @@ bindsym $mod+m exec "thunderbird"
 # ---------
 # Autostart
 # ---------
-# exec --no-startup-id compton -f
-exec_always feh --bg-scale /data/wall/lava.jpg
+exec_always feh --bg-scale /data/wall/wallhaven-d5jve3.jpg
 
 # Assigning workspaces
 assign [class="firefox"] $ws1
 assign [class="Brave"] $ws1
 assign [class="Wine"] $ws9
 assign [class="Slack"] $ws4
+assign [class="Discord"] $ws4
 assign [class="Steam"] $ws9
+assign [class="Lutris"] $ws9
 
 #always floating
 for_window [class="Galculator"] floating enable
@@ -169,9 +170,11 @@ for_window [window_role="Preferences"] floating enable
 for_window [window_type="dialog"] floating enable
 for_window [window_type="menu"] floating enable
 
+# Caps Lock key -> additional escape
+# setxkbmap -option caps:escape
 
 # Display settings
-exec_always --no-startup-id xrandr --output DisplayPort-0 --off --output DisplayPort-1 --mode 2560x1440 --rate 144.00 --pos 0x0 --rotate normal --output DisplayPort-2 --off --output HDMI-A-0 --off
+exec_always --no-startup-id xrandr --output DisplayPort-2 --mode 2560x1440 --rate 144.00 --pos 0x0 --rotate normal
 
 # Polybar
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh

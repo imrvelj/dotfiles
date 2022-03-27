@@ -20,11 +20,10 @@ alias dev="cd $HOME/projects/"
 # Arch
 alias paci="sudo pacman -S"
 
-# Fedora
 alias apdejt="sudo pacman -Syu"
 alias dnfi="sudo dnf install"
 alias dpkgi="sudo dpkg -i"
-alias aptclean="sudo apt autoclean && sudo apt autoremove"
+alias pacclean="sudo pacman -Rns $(pacman -Qtdq)"
 
 # (Neo)Vim
 alias v="nvim"
@@ -50,9 +49,8 @@ alias rmnode="find . -name "node_modules" -exec rm -rf '{}' + "
 alias socketeer_staging="ssh -i \"/data/mrki-machina.pem\" ubuntu@ec2-18-198-111-186.eu-central-1.compute.amazonaws.com"
 alias socketeer_production="ssh -i \"/data/mrki-machina.pem\" ubuntu@ec2-18-198-68-249.eu-central-1.compute.amazonaws.com"
 
-alias tellimervpn="sudo openvpn ~/tellimer.ovpn"
-
 alias mineeth="ethminer -G -P stratum1+tcp://0x8610b4cf70A56Ef7da076B7A349f9aAfe5F97Eb2.perpaer@eu1.ethermine.org:4444 --report-hashrate"
+
 
 #NVM
 export NVM_DIR="$HOME/.nvm"
