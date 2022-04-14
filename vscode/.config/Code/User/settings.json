@@ -18,7 +18,7 @@
     "[x]"
   ],
   "todo-tree.regex.regex": "(//|#|<!--|;|/\\*|^|^\\s*(-|\\d+.))\\s*($TAGS)",
-  "workbench.colorTheme": "Tokyo Night AltSynt",
+  "workbench.colorTheme": "Tokyo Night Gogh",
   "workbench.iconTheme": "file-icons",
   "git.confirmSync": false,
   "git.autofetch": true,

@@ -51,11 +51,7 @@ alias socketeer_production="ssh -i \"/data/mrki-machina.pem\" ubuntu@ec2-18-198-
 
 alias mineeth="ethminer -G -P stratum1+tcp://0x8610b4cf70A56Ef7da076B7A349f9aAfe5F97Eb2.perpaer@eu1.ethermine.org:4444 --report-hashrate"
 
-
-#NVM
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+export PATH=$PATH:$HOME/.volta/bin
 
 export PATH=$PATH:$HOME/.local/bin
 # Android
@@ -94,3 +90,5 @@ fi
 # tabtab source for slss package
 # uninstall by removing these lines or running `tabtab uninstall slss`
 [[ -f /home/rejd/projects/tellimer/monorepo/node_modules/tabtab/.completions/slss.zsh ]] && . /home/rejd/projects/tellimer/monorepo/node_modules/tabtab/.completions/slss.zsh
+export VOLTA_HOME="$HOME/.volta"
+export PATH="$VOLTA_HOME/bin:$PATH"

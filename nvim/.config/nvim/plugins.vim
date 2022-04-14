@@ -12,7 +12,6 @@ Plug 'prettier/vim-prettier', {
   \ 'for': ['javascript', 'typescript', 'css', 'less', 'scss', 'json', 'graphql', 'markdown', 'vue', 'yaml', 'html'] }
 Plug 'editorconfig/editorconfig-vim'
 Plug 'ap/vim-css-color'
-" Plug 'dense-analysis/ale'
 Plug 'jiangmiao/auto-pairs'
 
 Plug 'neovim/nvim-lspconfig'
@@ -44,5 +43,5 @@ Plug 'flrnd/plastic.vim'
 Plug 'sainnhe/gruvbox-material'
 Plug 'sainnhe/edge'
 Plug 'sainnhe/sonokai'
-Plug 'ghifarit53/tokyonight-vim'
+Plug 'folke/tokyonight.nvim'
 call plug#end()

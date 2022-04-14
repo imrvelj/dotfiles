@@ -1,4 +1,3 @@
-lua << EOF
 local nvim_lsp = require('lspconfig')
 local servers = { 'tsserver', 'clojure_lsp', 'eslint' }
 
@@ -49,6 +48,13 @@ cmp.setup {
 		format = lspkind.cmp_format()
 	},
 	mapping = {
+        ['<C-Space>'] = function(fallback)
+            if cmp.visible() then
+              cmp.close()
+            else
+              cmp.complete()
+            end
+          end,
         -- Use Tab and shift-Tab to navigate autocomplete menu
         ['<Tab>'] = function(fallback)
             if cmp.visible() then
@@ -85,4 +91,3 @@ cmp.setup {
         { name = 'buffer' },
     },
 }
-EOF
