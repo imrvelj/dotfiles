@@ -170,6 +170,9 @@ for_window [window_role="Preferences"] floating enable
 for_window [window_type="dialog"] floating enable
 for_window [window_type="menu"] floating enable
 
+for_window [instance="origin.exe"] floating enable
+for_window [instance="Origin.exe"] floating enable
+
 # Caps Lock key -> additional escape
 # setxkbmap -option caps:escape
 

@@ -1,4 +1,5 @@
 source $HOME/.config/nvim/plugins.vim
+
 set history=1000
 set encoding=utf8
 set ffs=unix,dos,mac

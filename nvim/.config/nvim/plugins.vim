@@ -24,7 +24,7 @@ Plug 'hrsh7th/nvim-cmp'
 Plug 'nvim-lua/plenary.nvim'
 Plug 'nvim-telescope/telescope.nvim'
 Plug 'nvim-telescope/telescope-fzf-native.nvim', { 'do': 'make' }
-
+Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 
 " Clojure
 Plug 'olical/conjure'
@@ -44,4 +44,6 @@ Plug 'sainnhe/gruvbox-material'
 Plug 'sainnhe/edge'
 Plug 'sainnhe/sonokai'
 Plug 'folke/tokyonight.nvim'
+Plug 'sainnhe/everforest'
+
 call plug#end()
