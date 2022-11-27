@@ -64,8 +64,7 @@ set t_Co=256
 set termguicolors
 set background=dark
 let g:tokyonight_style = 'night'
-
-colorscheme tokyonight
+colorscheme catppuccin_macchiato
 
 " Git gutter
 let g:gitgutter_enabled=1

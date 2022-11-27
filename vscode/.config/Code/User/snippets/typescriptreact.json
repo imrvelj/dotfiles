@@ -7,15 +7,15 @@
   "React FC": {
     "prefix": "rfc",
     "body": [
-      "import React, {FC} from 'react'",
-      "import styled from 'styled-components'",
+      "import {FC, ReactNode} from 'react'",
       "",
-      "interface Props {$2}",
-      "export const $1: FC<Props> = () => {",
-      "\treturn <Wrapper>$1</Wrapper>",
+      "interface Props {",
+      "\tclassName?: string",
+      "\tchildren?: ReactNode | ReactNode[]",
       "}",
-      "",
-      "const Wrapper = styled.div``"
+      "export const $1: FC<Props> = ({className = '', children = null}) => {",
+      "\treturn <div className={`\\${className}`}>{children}</div>",
+      "}"
     ],
     "description": "React functional component"
   },

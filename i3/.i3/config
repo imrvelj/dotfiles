@@ -147,7 +147,7 @@ bindsym $mod+m exec "thunderbird"
 # ---------
 # Autostart
 # ---------
-exec_always feh --bg-scale /data/wall/wallhaven-d5jve3.jpg
+exec_always feh --bg-scale /data/wall/wallhaven-1pj25v.jpg
 
 # Assigning workspaces
 assign [class="firefox"] $ws1
@@ -170,8 +170,7 @@ for_window [window_role="Preferences"] floating enable
 for_window [window_type="dialog"] floating enable
 for_window [window_type="menu"] floating enable
 
-for_window [instance="origin.exe"] floating enable
-for_window [instance="Origin.exe"] floating enable
+for_window [class=".exe"] floating enable
 
 # Caps Lock key -> additional escape
 # setxkbmap -option caps:escape
@@ -184,6 +183,3 @@ exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 
 # Picom
 exec_always picom
-
-# Disable mouse acceleration
-exec_always --no-startup-id xinput --set-prop 14 'libinput Accel Profile Enabled' 0, 1

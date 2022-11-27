@@ -18,12 +18,9 @@ alias glog="git log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset
 alias dev="cd $HOME/projects/"
 
 # Arch
-alias paci="sudo pacman -S"
-
-alias apdejt="sudo pacman -Syu"
+alias apdejt="sudo dnf update"
 alias dnfi="sudo dnf install"
 alias dpkgi="sudo dpkg -i"
-alias pacclean="sudo pacman -Rns $(pacman -Qtdq)"
 
 # (Neo)Vim
 alias v="nvim"
@@ -90,5 +87,14 @@ fi
 # tabtab source for slss package
 # uninstall by removing these lines or running `tabtab uninstall slss`
 [[ -f /home/rejd/projects/tellimer/monorepo/node_modules/tabtab/.completions/slss.zsh ]] && . /home/rejd/projects/tellimer/monorepo/node_modules/tabtab/.completions/slss.zsh
+
 export VOLTA_HOME="$HOME/.volta"
 export PATH="$VOLTA_HOME/bin:$PATH"
+
+# pnpm
+export PNPM_HOME="/home/rejd/.local/share/pnpm"
+export PATH="$PNPM_HOME:$PATH"
+# pnpm end
+# tabtab source for electron-forge package
+# uninstall by removing these lines or running `tabtab uninstall electron-forge`
+[[ -f /home/rejd/.npm/_npx/6913fdfd1ea7a741/node_modules/tabtab/.completions/electron-forge.zsh ]] && . /home/rejd/.npm/_npx/6913fdfd1ea7a741/node_modules/tabtab/.completions/electron-forge.zsh

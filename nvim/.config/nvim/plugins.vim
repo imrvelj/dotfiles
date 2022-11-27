@@ -24,6 +24,7 @@ Plug 'hrsh7th/nvim-cmp'
 Plug 'nvim-lua/plenary.nvim'
 Plug 'nvim-telescope/telescope.nvim'
 Plug 'nvim-telescope/telescope-fzf-native.nvim', { 'do': 'make' }
+Plug 'nvim-telescope/telescope-media-files.nvim'
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 
 " Clojure
@@ -39,11 +40,8 @@ Plug 'akinsho/bufferline.nvim'
 Plug 'simrat39/symbols-outline.nvim'
 
 " Color schemes
-Plug 'flrnd/plastic.vim'
 Plug 'sainnhe/gruvbox-material'
-Plug 'sainnhe/edge'
-Plug 'sainnhe/sonokai'
 Plug 'folke/tokyonight.nvim'
-Plug 'sainnhe/everforest'
+Plug 'catppuccin/vim', { 'as': 'catppuccin' }
 
 call plug#end()
