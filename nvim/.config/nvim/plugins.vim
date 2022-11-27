@@ -7,9 +7,7 @@ Plug 'nvim-lualine/lualine.nvim'
 Plug 'airblade/vim-gitgutter'
 Plug 'styled-components/vim-styled-components', { 'branch': 'main' }
 Plug 'peitalin/vim-jsx-typescript'
-Plug 'prettier/vim-prettier', {
-  \ 'do': 'yarn install',
-  \ 'for': ['javascript', 'typescript', 'css', 'less', 'scss', 'json', 'graphql', 'markdown', 'vue', 'yaml', 'html'] }
+Plug 'sbdchd/neoformat'
 Plug 'editorconfig/editorconfig-vim'
 Plug 'ap/vim-css-color'
 Plug 'jiangmiao/auto-pairs'
@@ -26,9 +24,6 @@ Plug 'nvim-telescope/telescope.nvim'
 Plug 'nvim-telescope/telescope-fzf-native.nvim', { 'do': 'make' }
 Plug 'nvim-telescope/telescope-media-files.nvim'
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
-
-" Clojure
-Plug 'olical/conjure'
 
 Plug 'ryanoasis/vim-devicons'
 Plug 'kyazdani42/nvim-web-devicons'

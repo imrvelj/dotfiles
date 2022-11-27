@@ -70,6 +70,9 @@ colorscheme catppuccin_macchiato
 let g:gitgutter_enabled=1
 let g:gitgutter_highlight_linenrs=1
 
+" Neoformat
+let g:neoformat_try_node_exe = 1
+
 command! -bang -nargs=* Rg
   \ call fzf#vim#grep(
   \   'rg --column --line-number --no-heading --color=always --smart-case -- '.shellescape(<q-args>), 1,
@@ -108,7 +111,7 @@ vnoremap <leader>P "+P
 noremap <leader>O :SymbolsOutline<CR>
 
 " Prettier
-nmap <C-f> :PrettierAsync<CR>
+nmap <C-f> :Neoformat<CR>
 
 " NvimTree
 nnoremap <leader>e :NvimTreeFindFileToggle<CR>
@@ -122,3 +125,9 @@ nmap <leader>b :Telescope buffers<cr>
 nmap <leader>g :Telescope live_grep<cr>
 nmap <leader>t :Telescope
 " nmap <leader>fh <cmd>lua require('telescope.builtin').help_tags()<cr>
+
+autocmd BufWritePre *.js Neoformat
+autocmd BufWritePre *.ts Neoformat
+autocmd BufWritePre *.jsx Neoformat
+autocmd BufWritePre *.tsx Neoformat
+
