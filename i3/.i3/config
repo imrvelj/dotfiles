@@ -147,7 +147,7 @@ bindsym $mod+m exec "thunderbird"
 # ---------
 # Autostart
 # ---------
-exec_always feh --bg-scale /data/wall/wallhaven-1pj25v.jpg
+exec_always feh --bg-scale /data/wall/wallhaven-mdjrqy.jpg
 
 # Assigning workspaces
 assign [class="firefox"] $ws1
