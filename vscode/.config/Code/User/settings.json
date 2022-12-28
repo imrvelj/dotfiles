@@ -79,7 +79,6 @@
   "[yaml]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
-  "workbench.productIconTheme": "fluent-icons",
   "[css]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
@@ -87,7 +86,6 @@
   "editor.scrollbar.horizontal": "hidden",
   "editor.scrollbar.vertical": "hidden",
   "editor.hideCursorInOverviewRuler": true,
-  "workbench.colorTheme": "Bearded Theme Arc EolStorm",
   "editor.minimap.enabled": false,
   "emmet.includeLanguages": {
     "javascript": "javascriptreact",
@@ -98,5 +96,6 @@
   },
   "[scss]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
-  }
+  },
+  "workbench.colorTheme": "Bearded Theme Will"
 }
