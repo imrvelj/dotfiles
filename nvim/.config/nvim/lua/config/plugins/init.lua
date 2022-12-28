@@ -17,13 +17,14 @@ return {
       }
     end
   },
+
   {
-    'rose-pine/neovim',
-    name = 'rose-pine',
+    "catppuccin/nvim", name = "catppuccin",
     config = function()
-      vim.cmd('colorscheme rose-pine')
+      vim.cmd('colorscheme catppuccin')
     end
   },
+
   {
     'lukas-reineke/indent-blankline.nvim',
     config = function ()
