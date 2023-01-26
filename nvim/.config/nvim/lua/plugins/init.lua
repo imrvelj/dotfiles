@@ -3,6 +3,7 @@ return {
   'nvim-lua/plenary.nvim',
   'tpope/vim-fugitive',
   'tpope/vim-rhubarb',
+  'tpope/vim-commentary',
   {
     'lewis6991/gitsigns.nvim',
     config = function ()
