@@ -20,9 +20,8 @@ set $red        #A5243D
 set $silver     #b0b0b0
 set $independence #4F5D75
 
-# class | border | background  | text | split
 client.urgent            $red        $red     $back      $red
-client.focused           #9aa5ce #364A82 #c0caf5 #9aa5ce   #9aa5ce
+client.focused           #364A82 #364A82 #c0caf5 #9aa5ce   #9aa5ce
 client.focused_inactive  #16161d #16161d #c0caf5 #16161d   #16161d
 client.unfocused         #16161d #16161d #c0caf5 #16161d   #16161d
 
