@@ -183,3 +183,4 @@ exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 
 # Picom
 exec_always picom --unredir-if-possible
+exec_always node $HOME/projects/bg-rotate/index.js
