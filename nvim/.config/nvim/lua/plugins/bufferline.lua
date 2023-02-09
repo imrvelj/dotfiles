@@ -1,10 +1,14 @@
 return {
   {
     'akinsho/bufferline.nvim',
-    setup = function ()
+    config = function ()
       require("bufferline").setup{
         options = {
-          separator_style = "slant"
+          icon = "▎",
+          separator_style = "icon",
+          buffer_close_icon = "",
+          modified_icon = "●",
+          close_icon = "",
         }
       }
     end
