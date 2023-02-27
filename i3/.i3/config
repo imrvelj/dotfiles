@@ -120,7 +120,7 @@ bindsym $mod+Shift+c reload
 bindsym $mod+Shift+r restart
 
 # exit
-bindsym $mod+Shift+q exec i3lock
+bindsym $mod+Shift+q exec i3lock-fancy
 bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'Quit?' -b 'Yes' 'i3-msg exit'"
 
 # resize
@@ -143,11 +143,6 @@ bindsym --release Shift+Print exec "scrot -s '/home/rejd/Pictures/screenshots/%s
 bindsym --release Ctrl+Shift+Print exec "scrot -s '/home/rejd/Pictures/screenshots/%s_%H%M_%d%m%Y_$wx$h.png' -e 'xclip -selection clipboard -target image/png -i $f'"
 
 bindsym $mod+m exec "thunderbird"
-
-# ---------
-# Autostart
-# ---------
-exec_always feh --bg-scale /data/wall/wallhaven-mdjrqy.jpg
 
 # Assigning workspaces
 assign [class="firefox"] $ws1
@@ -175,12 +170,22 @@ for_window [class=".exe"] floating enable
 # Caps Lock key -> additional escape
 # setxkbmap -option caps:escape
 
-# Display settings
-exec_always --no-startup-id xrandr --output DisplayPort-1 --mode 2560x1440 --rate 144.00 --pos 0x0 --rotate normal
-
 # Polybar
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 
 # Picom
 exec_always picom --unredir-if-possible
-exec_always node $HOME/projects/bg-rotate/index.js
+
+# autolock
+exec_always xidlehook \
+  --not-when-fullscreen \
+  --not-when-audio \
+  --timer 900 \
+    'xrandr --output "$PRIMARY_DISPLAY" --brightness .1' \
+    'xrandr --output "$PRIMARY_DISPLAY" --brightness 1' \
+  --timer 10 \
+    'xrandr --output "$PRIMARY_DISPLAY" --brightness 1; i3lock-fancy' \
+    '' \
+  --timer 3600 \
+    'systemctl suspend' \
+    ''
