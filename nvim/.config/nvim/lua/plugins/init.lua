@@ -1,68 +1,47 @@
 return {
-  { "catppuccin/nvim", name = "catppuccin" },
-
-  -- Configure LazyVim to load catppuccin
+  'williamboman/mason-lspconfig.nvim',
+  'nvim-lua/plenary.nvim',
+  'tpope/vim-fugitive',
+  'tpope/vim-rhubarb',
+  'vimpostor/vim-tpipeline',
+  'tpope/vim-commentary',
   {
-    "LazyVim/LazyVim",
-    opts = {
-      colorscheme = "catppuccin",
-    },
+    'lewis6991/gitsigns.nvim',
+    config = function ()
+      require('gitsigns').setup {
+        signs = {
+          add = { text = '+' },
+          change = { text = '~' },
+          delete = { text = '_' },
+          topdelete = { text = '‾' },
+          changedelete = { text = '~' },
+        },
+      }
+    end
   },
 
-  "tpope/vim-fugitive",
+  {
+    "catppuccin/nvim", name = "catppuccin",
+    config = function()
+      vim.cmd('colorscheme catppuccin')
+    end
+  },
 
-  -- add symbols-outline
+  {
+    'lukas-reineke/indent-blankline.nvim',
+    config = function ()
+      require('indent_blankline').setup {
+        char = '┊',
+        show_trailing_blankline_indent = false,
+      }
+    end
+  },
+  'tpope/vim-sleuth',
   {
     "simrat39/symbols-outline.nvim",
-    cmd = "SymbolsOutline",
     keys = { { "<leader>cs", "<cmd>SymbolsOutline<cr>", desc = "Symbols Outline" } },
     config = true,
   },
 
-  -- override nvim-cmp and add cmp-emoji
-  {
-    "hrsh7th/nvim-cmp",
-    dependencies = { "hrsh7th/cmp-emoji" },
-    ---@param opts cmp.ConfigSchema
-    opts = function(_, opts)
-      local cmp = require("cmp")
-      opts.sources = cmp.config.sources(vim.list_extend(opts.sources, { { name = "emoji" } }))
-    end,
-  },
-
-  -- add telescope-fzf-native
-  {
-    "telescope.nvim",
-    dependencies = {
-      "nvim-telescope/telescope-fzf-native.nvim",
-      build = "make",
-      config = function()
-        require("telescope").load_extension("fzf")
-      end,
-    },
-  },
-
-  -- add pyright to lspconfig
-  {
-    "neovim/nvim-lspconfig",
-    ---@class PluginLspOpts
-    opts = {
-      ---@type lspconfig.options
-      servers = {
-        -- pyright will be automatically installed with mason and loaded with lspconfig
-        pyright = {},
-      },
-    },
-  },
-
-  {
-    "nvim-treesitter/nvim-treesitter",
-    opts = function(_, opts)
-      -- add tsx and treesitter
-      vim.list_extend(opts.ensure_installed, {
-        "tsx",
-        "typescript",
-      })
-    end,
-  },
+  'jose-elias-alvarez/typescript.nvim'
 }
