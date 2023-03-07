@@ -3,7 +3,6 @@ return {
   'nvim-lua/plenary.nvim',
   'tpope/vim-fugitive',
   'tpope/vim-rhubarb',
-  'vimpostor/vim-tpipeline',
   'tpope/vim-commentary',
   {
     'lewis6991/gitsigns.nvim',
