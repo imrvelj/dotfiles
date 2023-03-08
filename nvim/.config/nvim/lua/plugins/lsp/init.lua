@@ -11,11 +11,8 @@ local M = {
 
 function M.config()
   require("mason")
-  -- require("config.plugins.lsp.diagnostics").setup()
 
   local function on_attach(client, bufnr)
-    -- require("nvim-navic").attach(client, bufnr)
-    -- require("config.plugins.lsp.formatting").setup(client, bufnr)
 
     -- Keymaps
     local nmap = function(keys, func, desc)
@@ -160,8 +157,6 @@ function M.config()
       require("lspconfig")[server].setup(opts)
     end
   end
-
-  -- require("config.plugins.null-ls").setup(options)
 end
 
 return M
