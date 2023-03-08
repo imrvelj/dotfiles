@@ -1,7 +1,7 @@
 {
   "LuaSnip": { "branch": "master", "commit": "e650efa2255990193454f43af828a3d8f4fe66ba" },
   "bufferline.nvim": { "branch": "main", "commit": "3677aceb9a72630b0613e56516c8f7151b86f95c" },
-  "catppuccin": { "branch": "main", "commit": "68a2d7c82f9a2ad802e02a8a9452f8cefc28c10d" },
+  "catppuccin": { "branch": "main", "commit": "155c494610637740f27efb64e4e5d86346ddc246" },
   "cmp-nvim-lsp": { "branch": "main", "commit": "0e6b2ed705ddcff9738ec4ea838141654f12eeef" },
   "cmp_luasnip": { "branch": "master", "commit": "18095520391186d634a0045dacaa346291096566" },
   "dressing.nvim": { "branch": "master", "commit": "5f44f829481640be0f96759c965ae22a3bcaf7ce" },
@@ -21,6 +21,7 @@
   "nvim-dap-ui": { "branch": "master", "commit": "bdb94e3853d11b5ce98ec182e5a3719d5c0ef6fd" },
   "nvim-dap-vscode-js": { "branch": "main", "commit": "03bd29672d7fab5e515fc8469b7d07cc5994bbf6" },
   "nvim-lspconfig": { "branch": "master", "commit": "3b08f2edc461314b9051edf26348f8af3fe33e63" },
+  "nvim-notify": { "branch": "master", "commit": "281e4d793c550c866bea3fb85d39de1f0188fb50" },
   "nvim-tree.lua": { "branch": "master", "commit": "59e65d88db177ad1e6a8cffaafd4738420ad20b6" },
   "nvim-treesitter": { "branch": "master", "commit": "d086563c02a582a552086ea94bfabd5f49d6872a" },
   "nvim-treesitter-textobjects": { "branch": "master", "commit": "f5f13206ec33e55b16c8e1a9dec301e8bead4835" },
