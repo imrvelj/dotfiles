@@ -11,11 +11,8 @@ local M = {
 
 function M.config()
   require("mason")
-  -- require("config.plugins.lsp.diagnostics").setup()
 
   local function on_attach(client, bufnr)
-    -- require("nvim-navic").attach(client, bufnr)
-    -- require("config.plugins.lsp.formatting").setup(client, bufnr)
 
     -- Keymaps
     local nmap = function(keys, func, desc)
@@ -68,6 +65,55 @@ function M.config()
         },
       },
     },
+    -- lua_ls = {
+    --   single_file_support = true,
+    --   settings = {
+    --     Lua = {
+    --       workspace = {
+    --         checkThirdParty = false,
+    --       },
+    --       completion = {
+    --         workspaceWord = true,
+    --         callSnippet = "Both",
+    --       },
+    --       misc = {
+    --         parameters = {
+    --           "--log-level=trace",
+    --         },
+    --       },
+    --       diagnostics = {
+    --         -- enable = false,
+    --         groupSeverity = {
+    --           strong = "Warning",
+    --           strict = "Warning",
+    --         },
+    --         groupFileStatus = {
+    --           ["ambiguity"] = "Opened",
+    --           ["await"] = "Opened",
+    --           ["codestyle"] = "None",
+    --           ["duplicate"] = "Opened",
+    --           ["global"] = "Opened",
+    --           ["luadoc"] = "Opened",
+    --           ["redefined"] = "Opened",
+    --           ["strict"] = "Opened",
+    --           ["strong"] = "Opened",
+    --           ["type-check"] = "Opened",
+    --           ["unbalanced"] = "Opened",
+    --           ["unused"] = "Opened",
+    --         },
+    --         unusedLocalExclude = { "_*" },
+    --       },
+    --       format = {
+    --         enable = false,
+    --         defaultConfig = {
+    --           indent_style = "space",
+    --           indent_size = "2",
+    --           continuation_indent_size = "2",
+    --         },
+    --       },
+    --     },
+    --   },
+    -- },
     gopls = {},
     marksman = {},
     pyright = {},
@@ -83,55 +129,6 @@ function M.config()
       },
     },
     yamlls = {},
-    sumneko_lua = {
-      single_file_support = true,
-      settings = {
-        Lua = {
-          workspace = {
-            checkThirdParty = false,
-          },
-          completion = {
-            workspaceWord = true,
-            callSnippet = "Both",
-          },
-          misc = {
-            parameters = {
-              "--log-level=trace",
-            },
-          },
-          diagnostics = {
-            -- enable = false,
-            groupSeverity = {
-              strong = "Warning",
-              strict = "Warning",
-            },
-            groupFileStatus = {
-              ["ambiguity"] = "Opened",
-              ["await"] = "Opened",
-              ["codestyle"] = "None",
-              ["duplicate"] = "Opened",
-              ["global"] = "Opened",
-              ["luadoc"] = "Opened",
-              ["redefined"] = "Opened",
-              ["strict"] = "Opened",
-              ["strong"] = "Opened",
-              ["type-check"] = "Opened",
-              ["unbalanced"] = "Opened",
-              ["unused"] = "Opened",
-            },
-            unusedLocalExclude = { "_*" },
-          },
-          format = {
-            enable = false,
-            defaultConfig = {
-              indent_style = "space",
-              indent_size = "2",
-              continuation_indent_size = "2",
-            },
-          },
-        },
-      },
-    },
     teal_ls = {},
     vimls = {},
     tailwindcss = {},
@@ -160,8 +157,6 @@ function M.config()
       require("lspconfig")[server].setup(opts)
     end
   end
-
-  -- require("config.plugins.null-ls").setup(options)
 end
 
 return M

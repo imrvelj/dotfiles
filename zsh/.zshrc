@@ -47,6 +47,7 @@ alias socketeer_staging="ssh -i \"/data/mrki-machina.pem\" ubuntu@ec2-18-198-111
 alias socketeer_production="ssh -i \"/data/mrki-machina.pem\" ubuntu@ec2-18-198-68-249.eu-central-1.compute.amazonaws.com"
 
 alias mineeth="ethminer -G -P stratum1+tcp://0x8610b4cf70A56Ef7da076B7A349f9aAfe5F97Eb2.perpaer@eu1.ethermine.org:4444 --report-hashrate"
+alias obs="VK_ICD_FILENAMES=/usr/share/vulkan/icd.d/amd_pro_icd64.json:/usr/share/vulkan/icd.d/amd_pro_icd32.json devour obs"
 
 export PATH=$PATH:$HOME/.volta/bin
 

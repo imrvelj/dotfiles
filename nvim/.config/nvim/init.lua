@@ -13,7 +13,6 @@ vim.o.ignorecase = true
 vim.o.smartcase = true
 vim.o.updatetime = 250
 vim.wo.signcolumn = 'yes'
-vim.o.termguicolors = true
 vim.o.completeopt = 'menuone,noselect'
 vim.o.laststatus = 0
 
@@ -26,6 +25,8 @@ vim.keymap.set('n', 'j', "v:count == 0 ? 'gj' : 'j'", { expr = true, silent = tr
 vim.keymap.set('n', '<leader>s', ":w<CR>", { desc = 'Save file' })
 vim.keymap.set('n', '<leader>e', ":NvimTreeFindFileToggle<CR>", { desc = 'Toggle file tree' })
 vim.keymap.set('n', '<leader>gs', ":Git<CR>", { desc = 'Toggle file tree' })
+vim.keymap.set('n', '<C-h>', ":silent bp<CR>")
+vim.keymap.set('n', '<C-l>', ":silent bn<CR>")
 
 -- [[ Highlight on yank ]]
 local highlight_group = vim.api.nvim_create_augroup('YankHighlight', { clear = true })
