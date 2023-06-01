@@ -42,5 +42,12 @@ return {
     config = true,
   },
 
-  'jose-elias-alvarez/typescript.nvim'
+  'jose-elias-alvarez/typescript.nvim',
+
+   {
+    "norcalli/nvim-colorizer.lua",
+    config = function ()
+      require 'colorizer'.setup()
+    end
+   },
 }

@@ -2,9 +2,7 @@ local M = {
 "neovim/nvim-lspconfig",
   event = "BufReadPre",
   dependencies = {
-    "hrsh7th/cmp-nvim-lsp",
-    { "folke/neoconf.nvim", cmd = "Neoconf", config = true },
-    "folke/neodev.nvim",
+    "hrsh7th/cmp-nvim-lsp"
   },
   pin = true,
 }
@@ -13,7 +11,6 @@ function M.config()
   require("mason")
 
   local function on_attach(client, bufnr)
-
     -- Keymaps
     local nmap = function(keys, func, desc)
       if desc then
@@ -42,12 +39,13 @@ function M.config()
   end
 
   local servers = {
-    ansiblels = {},
-    bashls = {},
-    clangd = {},
-    cssls = {},
-    dockerls = {},
-    tsserver = {},
+    denols = {
+      single_file_support = false,
+      root_dir = require("lspconfig").util.root_pattern("deno.json", "deno.jsonc"),
+    },
+    tsserver = {
+      root_dir = require("lspconfig").util.root_pattern("package.json", "node_modules"),
+    },
     svelte = {},
     eslint = {},
     html = {},
@@ -65,58 +63,7 @@ function M.config()
         },
       },
     },
-    -- lua_ls = {
-    --   single_file_support = true,
-    --   settings = {
-    --     Lua = {
-    --       workspace = {
-    --         checkThirdParty = false,
-    --       },
-    --       completion = {
-    --         workspaceWord = true,
-    --         callSnippet = "Both",
-    --       },
-    --       misc = {
-    --         parameters = {
-    --           "--log-level=trace",
-    --         },
-    --       },
-    --       diagnostics = {
-    --         -- enable = false,
-    --         groupSeverity = {
-    --           strong = "Warning",
-    --           strict = "Warning",
-    --         },
-    --         groupFileStatus = {
-    --           ["ambiguity"] = "Opened",
-    --           ["await"] = "Opened",
-    --           ["codestyle"] = "None",
-    --           ["duplicate"] = "Opened",
-    --           ["global"] = "Opened",
-    --           ["luadoc"] = "Opened",
-    --           ["redefined"] = "Opened",
-    --           ["strict"] = "Opened",
-    --           ["strong"] = "Opened",
-    --           ["type-check"] = "Opened",
-    --           ["unbalanced"] = "Opened",
-    --           ["unused"] = "Opened",
-    --         },
-    --         unusedLocalExclude = { "_*" },
-    --       },
-    --       format = {
-    --         enable = false,
-    --         defaultConfig = {
-    --           indent_style = "space",
-    --           indent_size = "2",
-    --           continuation_indent_size = "2",
-    --         },
-    --       },
-    --     },
-    --   },
-    -- },
-    gopls = {},
     marksman = {},
-    pyright = {},
     rust_analyzer = {
       settings = {
         ["rust-analyzer"] = {
@@ -128,8 +75,6 @@ function M.config()
         },
       },
     },
-    yamlls = {},
-    teal_ls = {},
     vimls = {},
     tailwindcss = {},
   }
