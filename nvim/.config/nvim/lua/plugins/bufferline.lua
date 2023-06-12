@@ -4,11 +4,8 @@ return {
     config = function ()
       require("bufferline").setup{
         options = {
-          icon = "▎",
-          separator_style = "icon",
-          buffer_close_icon = "",
-          modified_icon = "●",
-          close_icon = "",
+          diagnostics = 'nvim_lsp',
+          separator_style = 'slant',
         }
       }
     end
