@@ -28,25 +28,14 @@ alias vim="nvim"
 alias vedit="nvim ~/dotfiles/nvim/.config/nvim/init.vim"
 
 alias i3edit="nvim ~/dotfiles/i3/.i3/config"
-
-# Tmux
 alias tns="tmux new -s"
-
-# Yarn
-alias yarnd="yarn add"
-alias yarndv="yarn add --dev"
-alias yarng="yarn global add"
+alias dotedit="cd ~/dotfiles && nvim"
 
 # Docker
 alias dockup="docker-compose up -d"
 alias dockkill="docker-compose kill"
-
-alias restartpulse="pulseaudio --kill && pulseaudio"
 alias rmnode="find . -name "node_modules" -exec rm -rf '{}' + "
-alias socketeer_staging="ssh -i \"/data/mrki-machina.pem\" ubuntu@ec2-18-198-111-186.eu-central-1.compute.amazonaws.com"
-alias socketeer_production="ssh -i \"/data/mrki-machina.pem\" ubuntu@ec2-18-198-68-249.eu-central-1.compute.amazonaws.com"
 
-alias mineeth="ethminer -G -P stratum1+tcp://0x8610b4cf70A56Ef7da076B7A349f9aAfe5F97Eb2.perpaer@eu1.ethermine.org:4444 --report-hashrate"
 alias obs="VK_ICD_FILENAMES=/usr/share/vulkan/icd.d/amd_pro_icd64.json:/usr/share/vulkan/icd.d/amd_pro_icd32.json devour obs"
 
 export PATH=$PATH:$HOME/.volta/bin
@@ -79,16 +68,6 @@ if [ -n "$DESKTOP_SESSION" ];then
     export SSH_AUTH_SOCK
 fi
 
-# tabtab source for serverless package
-# uninstall by removing these lines or running `tabtab uninstall serverless`
-[[ -f /home/rejd/projects/tellimer/monorepo/node_modules/tabtab/.completions/serverless.zsh ]] && . /home/rejd/projects/tellimer/monorepo/node_modules/tabtab/.completions/serverless.zsh
-# tabtab source for sls package
-# uninstall by removing these lines or running `tabtab uninstall sls`
-[[ -f /home/rejd/projects/tellimer/monorepo/node_modules/tabtab/.completions/sls.zsh ]] && . /home/rejd/projects/tellimer/monorepo/node_modules/tabtab/.completions/sls.zsh
-# tabtab source for slss package
-# uninstall by removing these lines or running `tabtab uninstall slss`
-[[ -f /home/rejd/projects/tellimer/monorepo/node_modules/tabtab/.completions/slss.zsh ]] && . /home/rejd/projects/tellimer/monorepo/node_modules/tabtab/.completions/slss.zsh
-
 export VOLTA_HOME="$HOME/.volta"
 export PATH="$VOLTA_HOME/bin:$PATH"
 
@@ -98,7 +77,3 @@ case ":$PATH:" in
   *":$PNPM_HOME:"*) ;;
   *) export PATH="$PNPM_HOME:$PATH" ;;
 esac
-# pnpm end
-# tabtab source for electron-forge package
-# uninstall by removing these lines or running `tabtab uninstall electron-forge`
-[[ -f /home/rejd/.npm/_npx/6913fdfd1ea7a741/node_modules/tabtab/.completions/electron-forge.zsh ]] && . /home/rejd/.npm/_npx/6913fdfd1ea7a741/node_modules/tabtab/.completions/electron-forge.zsh

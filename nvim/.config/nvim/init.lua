@@ -17,6 +17,10 @@ vim.wo.signcolumn = 'yes'
 vim.o.completeopt = 'menuone,noselect'
 vim.o.laststatus = 0
 
+-- Treesitter folding
+vim.o.foldmethod = 'expr'
+vim.o.foldexpr = 'nvim_treesitter#foldexpr()'
+
 -- Fix default keymaps
 vim.keymap.set({ 'n', 'v' }, '<Space>', '<Nop>', { silent = true })
 vim.keymap.set('n', 'k', "v:count == 0 ? 'gk' : 'k'", { expr = true, silent = true })
@@ -25,7 +29,7 @@ vim.keymap.set('n', 'j', "v:count == 0 ? 'gj' : 'j'", { expr = true, silent = tr
 -- TODO: move
 vim.keymap.set('n', '<leader>s', ":w<CR>", { desc = 'Save file' })
 vim.keymap.set('n', '<leader>e', ":NvimTreeFindFileToggle<CR>", { desc = 'Toggle file tree' })
-vim.keymap.set('n', '<leader>gs', ":Git<CR>", { desc = 'Toggle file tree' })
+vim.keymap.set('n', '<leader>gs', ":Git<CR>", { desc = '[G]it [S]tatus' })
 vim.keymap.set('n', '<C-h>', ":silent bp<CR>")
 vim.keymap.set('n', '<C-l>', ":silent bn<CR>")
 

@@ -5,7 +5,15 @@ return {
       require("bufferline").setup{
         options = {
           diagnostics = 'nvim_lsp',
-          separator_style = 'slant',
+          separator_style = 'thin',
+          highlights = {
+            separator = {
+              bg = '#181926'
+            },
+            background = {
+              bg = '#181926'
+            }
+          }
         }
       }
     end

@@ -39,6 +39,7 @@ return {
       vim.keymap.set('n', '<leader>h', require('telescope.builtin').help_tags, { desc = '[S]earch [H]elp' })
       vim.keymap.set('n', '<leader>F', require('telescope.builtin').live_grep, { desc = '[S]earch by [G]rep' })
       vim.keymap.set('n', '<leader>d', require('telescope.builtin').diagnostics, { desc = '[S]earch [D]iagnostics' })
+      vim.keymap.set('n', '<leader>O', require('telescope.builtin').lsp_dynamic_workspace_symbols, { desc = 'Dynamic Workspace [S]ymbols' })
     end
   },
 }
