@@ -1,7 +1,7 @@
 # Path to your oh-my-zsh installation.
 export ZSH=$HOME/.oh-my-zsh
 
-plugins=(git npm tmux symfony2)
+plugins=(git npm tmux)
 
 # Theme
 ZSH_THEME="oxide"
@@ -16,11 +16,7 @@ alias gc="git commit"
 alias gp="git push"
 alias glog="git log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative"
 alias dev="cd $HOME/projects/"
-
-# Arch
-alias apdejt="sudo dnf update"
-alias dnfi="sudo dnf install"
-alias dpkgi="sudo dpkg -i"
+alias apdejt="eos-update && yay -Syu"
 
 # (Neo)Vim
 alias v="nvim"
@@ -35,12 +31,11 @@ alias dotedit="cd ~/dotfiles && nvim"
 alias dockup="docker-compose up -d"
 alias dockkill="docker-compose kill"
 alias rmnode="find . -name "node_modules" -exec rm -rf '{}' + "
-
 alias obs="VK_ICD_FILENAMES=/usr/share/vulkan/icd.d/amd_pro_icd64.json:/usr/share/vulkan/icd.d/amd_pro_icd32.json devour obs"
 
 export PATH=$PATH:$HOME/.volta/bin
-
 export PATH=$PATH:$HOME/.local/bin
+
 # Android
 export ANDROID_HOME=$HOME/Android/Sdk
 export PATH=$PATH:$ANDROID_HOME/tools
@@ -77,3 +72,5 @@ case ":$PATH:" in
   *":$PNPM_HOME:"*) ;;
   *) export PATH="$PNPM_HOME:$PATH" ;;
 esac
+
+source /home/rejd/.config/broot/launcher/bash/br

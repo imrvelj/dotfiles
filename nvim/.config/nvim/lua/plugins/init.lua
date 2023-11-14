@@ -1,9 +1,9 @@
 return {
-  'williamboman/mason-lspconfig.nvim',
-  'nvim-lua/plenary.nvim',
   'tpope/vim-fugitive',
   'tpope/vim-rhubarb',
   'tpope/vim-commentary',
+  'tpope/vim-sleuth',
+
   {
     'lewis6991/gitsigns.nvim',
     config = function ()
@@ -28,21 +28,21 @@ return {
 
   {
     'lukas-reineke/indent-blankline.nvim',
+    main = 'ibl',
     config = function ()
-      require('indent_blankline').setup {
-        char = '┊',
-        show_trailing_blankline_indent = false,
-      }
+      require('ibl').setup()
+      -- require('ibl').setup {
+      --   char = '┊',
+      --   show_trailing_blankline_indent = false,
+      -- }
     end
   },
-  'tpope/vim-sleuth',
+
   {
     "simrat39/symbols-outline.nvim",
     keys = { { "<leader>cs", "<cmd>SymbolsOutline<cr>", desc = "Symbols Outline" } },
     config = true,
   },
-
-  'jose-elias-alvarez/typescript.nvim',
 
    {
     "norcalli/nvim-colorizer.lua",

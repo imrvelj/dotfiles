@@ -56,9 +56,8 @@ function M.config()
   end
 
   require('dap-vscode-js').setup({
-    debugger_path = vim.fn.stdpath('data') .. '/mason/packages/js-debug-adapter',
-    debugger_cmd = { 'js-debug-adapter' },
-    adapters = { 'pwa-node', 'pwa-chrome', 'pwa-msedge', 'node-terminal', 'pwa-extensionHost' },
+    debugger_cmd = { "js-debug-adapter" },
+    adapters = { 'chrome', 'pwa-node', 'pwa-chrome', 'pwa-msedge', 'node-terminal', 'pwa-extensionHost', 'node', 'chrome' },
   })
 
   for _, language in ipairs({ 'typescript', 'javascript' }) do

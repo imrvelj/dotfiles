@@ -1,5 +1,4 @@
 {
-  "emmet.excludeLanguages": ["markdown", "typescriptreact"],
   "files.autoSave": "onFocusChange",
   "editor.fontFamily": "'Rec Mono Semicasual', 'JetBrainsMono Nerd Font Mono', monospace",
   "editor.tabSize": 4,
@@ -31,7 +30,7 @@
     "**/coverage": true,
     "**/dist": true
   },
-  "window.menuBarVisibility": "compact",
+  "window.menuBarVisibility": "toggle",
   "[javascript]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
@@ -101,5 +100,13 @@
   "[dockercompose]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
-  "editor.formatOnSave": true
+  "editor.formatOnSave": true,
+  "debug.javascript.autoAttachFilter": "smart",
+  "vscode-kubernetes.log-viewer.follow": false,
+  "vscode-kubernetes.log-viewer.timestamp": false,
+  "vscode-kubernetes.log-viewer.since": -1,
+  "vscode-kubernetes.log-viewer.tail": -1,
+  "vscode-kubernetes.log-viewer.destination": "Webview",
+  "vscode-kubernetes.log-viewer.wrap": false,
+  "gitlens.telemetry.enabled": false
 }

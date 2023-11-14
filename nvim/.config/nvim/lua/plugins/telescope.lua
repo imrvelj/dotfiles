@@ -3,6 +3,7 @@ return {
     dependencies = {
       { "nvim-telescope/telescope-fzf-native.nvim", build = "make" },
     },
+
     config = function ()
       local telescope = require('telescope')
 
@@ -13,6 +14,16 @@ return {
               ['<C-u>'] = false,
               ['<C-d>'] = false,
             },
+          },
+          vimgrep_arguments = {
+            'rg',
+            '--color=never',
+            '--no-heading',
+            '--with-filename',
+            '--line-number',
+            '--column',
+            '--smart-case',
+            '--hidden',
           },
         },
         pickers = {

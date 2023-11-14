@@ -52,6 +52,7 @@ bindsym $mod+q kill
 
 # Rofi
 bindsym $mod+space exec rofi -show drun
+# bindsym $mod+w exec rofi -show window
 
 # Change focus
 bindsym $mod+h focus left
@@ -156,14 +157,15 @@ assign [class="firefox"] $ws1
 assign [class="Brave"] $ws1
 assign [class="Wine"] $ws9
 assign [class="Slack"] $ws4
-assign [class="Discord"] $ws4
-assign [class="Steam"] $ws9
+assign [class="discord"] $ws4
+assign [class="steam"] $ws9
 assign [class="Lutris"] $ws9
 
 #always floating
 for_window [class="Galculator"] floating enable
 for_window [class="Wine"] floating enable
-for_window [class="Steam"] floating enable
+for_window [class="steam"] floating enable
+for_window [class="Bottles"] floating enable
 for_window [class="Lutris"] floating enable
 for_window [window_role="pop-up"] floating enable
 for_window [window_role="bubble"] floating enable
@@ -171,8 +173,7 @@ for_window [window_role="task_dialog"] floating enable
 for_window [window_role="Preferences"] floating enable
 for_window [window_type="dialog"] floating enable
 for_window [window_type="menu"] floating enable
-
-for_window [class=".exe"] floating enable
+for_window [class="*.exe"] floating enable
 
 # Caps Lock key -> additional escape
 # setxkbmap -option caps:escape
