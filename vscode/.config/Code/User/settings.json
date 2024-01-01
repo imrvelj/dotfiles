@@ -1,6 +1,6 @@
 {
   "files.autoSave": "onFocusChange",
-  "editor.fontFamily": "'Rec Mono Semicasual', 'JetBrainsMono Nerd Font Mono', monospace",
+  "editor.fontFamily": "'JetBrainsMono Nerd Font Mono', monospace",
   "editor.tabSize": 4,
   "editor.cursorStyle": "line",
   "editor.insertSpaces": false,
@@ -54,7 +54,7 @@
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
   "explorer.confirmDragAndDrop": false,
-  "editor.lineHeight": 1.8,
+  "editor.lineHeight": 1.6,
   "auto-rename-tag.activationOnLanguage": [
     "html",
     "xml",
@@ -63,7 +63,6 @@
     "javascriptreact",
     "typescriptreact"
   ],
-  "editor.fontSize": 13,
   "[javascriptreact]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
@@ -96,7 +95,7 @@
   "[scss]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
-  "workbench.colorTheme": "Bearded Theme feat. Will",
+  "workbench.colorTheme": "Catppuccin Mocha",
   "[dockercompose]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
@@ -108,5 +107,6 @@
   "vscode-kubernetes.log-viewer.tail": -1,
   "vscode-kubernetes.log-viewer.destination": "Webview",
   "vscode-kubernetes.log-viewer.wrap": false,
-  "gitlens.telemetry.enabled": false
+  "gitlens.telemetry.enabled": false,
+  "editor.fontSize": 13
 }
