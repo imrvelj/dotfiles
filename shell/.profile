@@ -1,9 +1,8 @@
-export TERMINAL=xfce4-terminal
+export TERMINAL=kitty
 #export QT_QPA_PLATFORMTHEME=qt5ct
 #export QT_QPA_PLATFORMTHEME=qt6ct
 
-
-# Added by Toolbox App
-export PATH="$PATH:/home/rejd/.local/share/JetBrains/Toolbox/scripts"
-
 . "$HOME/.cargo/env"
+
+export VOLTA_HOME="$HOME/.volta"
+export PATH="$VOLTA_HOME/bin:$HOME/.local/bin:$PATH"
