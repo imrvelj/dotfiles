@@ -12,6 +12,9 @@ return {
   -- prettier
   { import = "lazyvim.plugins.extras.formatting.prettier" },
 
+  -- DAP
+  { import = "lazyvim.plugins.extras.dap.core" },
+
   -- add symbols-outline
   {
     "simrat39/symbols-outline.nvim",
