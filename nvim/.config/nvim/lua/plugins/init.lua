@@ -1,82 +1,63 @@
 return {
+  'tpope/vim-sleuth',
+
   {
-    "LazyVim/LazyVim",
-    opts = {
-      colorscheme = "catppuccin",
+    "kdheepak/lazygit.nvim",
+    dependencies = {
+      "nvim-lua/plenary.nvim",
     },
   },
 
-  -- add jsonls and schemastore packages, and setup treesitter for json, json5 and jsonc
-  { import = "lazyvim.plugins.extras.lang.json" },
+  { 'folke/which-key.nvim',  opts = {} },
 
-  -- prettier
-  { import = "lazyvim.plugins.extras.formatting.prettier" },
-
-  -- DAP
-  { import = "lazyvim.plugins.extras.dap.core" },
-
-  -- add symbols-outline
   {
-    "simrat39/symbols-outline.nvim",
-    cmd = "SymbolsOutline",
-    keys = { { "<leader>cs", "<cmd>SymbolsOutline<cr>", desc = "Symbols Outline" } },
-    config = true,
+    'catppuccin/nvim',
+    name = 'catppuccin',
+    priority = 1000,
+    config = function()
+      vim.cmd.colorscheme 'catppuccin'
+    end
   },
 
-  -- override nvim-cmp and add cmp-emoji
   {
-    "hrsh7th/nvim-cmp",
-    dependencies = { "hrsh7th/cmp-emoji" },
-    ---@param opts cmp.ConfigSchema
-    opts = function(_, opts)
-      table.insert(opts.sources, { name = "emoji" })
-    end,
-  },
-
-  -- add more treesitter parsers
-  {
-    "nvim-treesitter/nvim-treesitter",
+    'nvim-lualine/lualine.nvim',
     opts = {
-      ensure_installed = {
-        "bash",
-        "html",
-        "javascript",
-        "json",
-        "lua",
-        "markdown",
-        "markdown_inline",
-        "python",
-        "query",
-        "regex",
-        "tsx",
-        "typescript",
-        "vim",
-        "yaml",
+      options = {
+        icons_enabled = false,
+        theme = 'catppuccin',
+        component_separators = '|',
+        section_separators = '',
       },
     },
   },
 
   {
-    "nvim-treesitter/nvim-treesitter",
-    opts = function(_, opts)
-      -- add tsx and treesitter
-      vim.list_extend(opts.ensure_installed, {
-        "tsx",
-        "typescript",
-      })
-    end,
+    'lukas-reineke/indent-blankline.nvim',
+    main = 'ibl',
+    opts = {},
   },
 
   {
-    "williamboman/mason.nvim",
-    opts = {
-      ensure_installed = {
-        "stylua",
-        "shellcheck",
-        "shfmt",
-        "flake8",
-        "eslint_d",
-      },
+    'nvim-treesitter/nvim-treesitter',
+    dependencies = {
+      'nvim-treesitter/nvim-treesitter-textobjects',
     },
+    build = ':TSUpdate',
   },
+
+  { 'numToStr/Comment.nvim', opts = {} },
+
+  {
+    "nvim-neo-tree/neo-tree.nvim",
+    branch = "v3.x",
+    dependencies = {
+      "nvim-lua/plenary.nvim",
+      "nvim-tree/nvim-web-devicons",
+      "MunifTanjim/nui.nvim",
+    }
+  },
+  {
+    'stevearc/dressing.nvim',
+    opts = {},
+  }
 }
