@@ -9,6 +9,7 @@ return {
       vim.g.lsp_zero_extend_lspconfig = 0
     end,
   },
+
   {
     'williamboman/mason.nvim',
     lazy = false,
@@ -42,6 +43,24 @@ return {
     end
   },
 
+  {
+    'nvim-treesitter/nvim-treesitter',
+    dependencies = {
+      'nvim-treesitter/nvim-treesitter-textobjects',
+    },
+    build = ':TSUpdate',
+    config = function()
+      local configs = require("nvim-treesitter.configs")
+
+      configs.setup({
+        ensure_installed = { "c", "lua", "vim", "vimdoc", "query", "elixir", "heex", "javascript", "typescript", "html" },
+        sync_install = false,
+        highlight = { enable = true },
+        indent = { enable = true },
+      })
+    end,
+  },
+
   -- LSP
   {
     'neovim/nvim-lspconfig',
@@ -50,9 +69,6 @@ return {
     dependencies = {
       { 'hrsh7th/cmp-nvim-lsp' },
       { 'williamboman/mason-lspconfig.nvim' },
-    },
-    keys = {
-      -- { '<leader>ca', vim.lsp.buf.code_action, desc = 'Code actions' }
     },
     config = function()
       local lsp_zero = require('lsp-zero')
@@ -63,7 +79,7 @@ return {
       end)
 
       require('mason-lspconfig').setup({
-        ensure_installed = { 'eslint', 'tsserver', 'tailwindcss', 'prismals' },
+        ensure_installed = { 'eslint', 'tsserver', 'tailwindcss', 'prismals', 'elixirls' },
         handlers = {
           lsp_zero.default_setup,
           lua_ls = function()

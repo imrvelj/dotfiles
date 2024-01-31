@@ -12,9 +12,9 @@ vim.keymap.set('n', '<leader>e', vim.diagnostic.open_float, { desc = 'Open float
 vim.keymap.set('n', '<leader>q', vim.diagnostic.setloclist, { desc = 'Open diagnostics list' })
 
 -- Telescope
-local find_files_cmd = ':Telescope find_files find_command=rg,--ignore,--hidden,--files prompt_prefix=🔍<CR>'
-vim.keymap.set('n', '<leader>ff', find_files_cmd, { desc = 'Find files' })
-vim.keymap.set('n', '<leader><leader>', find_files_cmd, { desc = 'Find files' })
+vim.keymap.set('n', '<leader>f', ':Telescope find_files find_command=rg,--ignore,--hidden,--files prompt_prefix=🔍<CR>',
+  { desc = 'Find files' })
+vim.keymap.set('n', '<leader><leader>', ':Telescope buffers <CR>', { desc = 'Find files' })
 vim.keymap.set('n', '<leader>sg', ':Telescope live_grep <CR>', { desc = 'Grep' })
 
 -- Tree
