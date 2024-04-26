@@ -34,6 +34,8 @@ return {
         formatting = lsp_zero.cmp_format(),
         mapping = cmp.mapping.preset.insert({
           ['<C-Space>'] = cmp.mapping.complete(),
+          ['<CR>'] = cmp.mapping.confirm({ select = true }),
+          ['<Tab>'] = cmp.mapping.confirm({ select = true }),
           ['<C-u>'] = cmp.mapping.scroll_docs(-4),
           ['<C-d>'] = cmp.mapping.scroll_docs(4),
           ['<C-f>'] = cmp_action.luasnip_jump_forward(),
@@ -54,8 +56,8 @@ return {
 
       configs.setup({
         ensure_installed = { "c", "lua", "vim", "vimdoc", "query", "elixir", "heex", "javascript", "typescript", "html" },
-        sync_install = false,
-        highlight = { enable = true },
+        auto_install = true,
+        highlight = { enable = true, disable = {} },
         indent = { enable = true },
       })
     end,

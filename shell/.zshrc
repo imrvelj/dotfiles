@@ -77,3 +77,12 @@ case ":$PATH:" in
 esac
 
 source /home/rejd/.config/broot/launcher/bash/br
+
+# bun completions
+[ -s "/home/rejd/.bun/_bun" ] && source "/home/rejd/.bun/_bun"
+
+# bun
+export BUN_INSTALL="$HOME/.bun"
+export PATH="$BUN_INSTALL/bin:$PATH"
+
+export BROWSER=brave

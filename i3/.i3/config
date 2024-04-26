@@ -66,11 +66,8 @@ bindsym $mod+Shift+j move down
 bindsym $mod+Shift+k move up
 bindsym $mod+Shift+l move right
 
-# split in horizontal orientation
-bindsym $mod+b split h
-
-# split in vertical orientation
-bindsym $mod+v split v
+bindsym $mod+i split v
+bindsym $mod+o split h
 
 # enter fullscreen mode for the focused container
 bindsym $mod+f fullscreen toggle
@@ -139,9 +136,8 @@ mode "resize" {
 
 
 # Scrot
-bindsym --release Print exec "scrot -m '/home/rejd/Pictures/screenshots/%s_%H%M_%d.%m.%Y_$wx$h.png'"
-bindsym --release Shift+Print exec "scrot -s '/home/rejd/Pictures/screenshots/%s_%H%M_%d%m%Y_$wx$h.png'"
-bindsym --release Ctrl+Shift+Print exec "scrot -s '/home/rejd/Pictures/screenshots/%s_%H%M_%d%m%Y_$wx$h.png' -e 'xclip -selection clipboard -target image/png -i $f'"
+bindsym --release Shift+Print exec "scrot -m '/home/rejd/Pictures/screenshots/%s_%H%M_%d.%m.%Y_$wx$h.png'"
+bindsym --release Print exec "scrot -s '/home/rejd/Pictures/screenshots/%s_%H%M_%d%m%Y_$wx$h.png' -e 'xclip -selection clipboard -target image/png -i $f'"
 
 # Media player controls
 bindsym XF86AudioRaiseVolume exec --no-startup-id pactl -- set-sink-volume @DEFAULT_SINK@ +5%
@@ -168,6 +164,7 @@ for_window [class="steam"] floating enable
 for_window [class="Bottles"] floating enable
 for_window [class="Lutris"] floating enable
 for_window [class="Battle.net"] floating enable
+for_window [class="battle.net.exe"] floating enable
 for_window [window_role="pop-up"] floating enable
 for_window [window_role="bubble"] floating enable
 for_window [window_role="task_dialog"] floating enable

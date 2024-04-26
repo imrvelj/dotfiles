@@ -1,10 +1,11 @@
 return {
   'mfussenegger/nvim-dap',
   dependencies = {
-    'rcarriga/nvim-dap-ui',
+    'nvim-neotest/nvim-nio',
     'williamboman/mason.nvim',
     'jay-babu/mason-nvim-dap.nvim',
     'leoluz/nvim-dap-go',
+    'rcarriga/nvim-dap-ui',
   },
   config = function()
     local dap = require 'dap'
@@ -26,6 +27,7 @@ return {
     vim.keymap.set('n', '<leader>dB', function()
       dap.set_breakpoint(vim.fn.input 'Breakpoint condition: ')
     end, { desc = 'Debug: Set Breakpoint' })
+    vim.keymap.set('n', '<leader>dui', dapui.toggle, { desc = 'Toggle UI' })
 
     dapui.setup {
       icons = { expanded = '▾', collapsed = '▸', current_frame = '*' },
@@ -43,8 +45,6 @@ return {
         },
       },
     }
-
-    vim.keymap.set('n', '<F7>', dapui.toggle, { desc = 'Debug: See last session result.' })
 
     dap.listeners.after.event_initialized['dapui_config'] = dapui.open
     dap.listeners.before.event_terminated['dapui_config'] = dapui.close

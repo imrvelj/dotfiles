@@ -4,6 +4,8 @@ vim.keymap.set('n', 'j', "v:count == 0 ? 'gj' : 'j'", { expr = true, silent = tr
 
 -- regular stuff
 vim.keymap.set('n', '<C-s>', ':w<CR>', { desc = 'Save file' })
+vim.keymap.set('i', '<C-BS>', '<ESC>', { desc = 'Escape insert mode' })
+vim.keymap.set('i', '<S-BS>', '<ESC>', { desc = 'Escape insert mode' })
 
 -- diagnostics
 vim.keymap.set('n', '[d', vim.diagnostic.goto_prev, { desc = 'Go to previous diagnostic message' })
@@ -25,5 +27,7 @@ vim.keymap.set('n', '<leader>gg', ':LazyGit<CR>', { desc = 'LazyGit' })
 
 -- Coding
 vim.keymap.set('n', '<leader>ca', vim.lsp.buf.code_action, { desc = 'Code actions' })
+vim.keymap.set('n', '<leader>cr', vim.lsp.buf.rename, { desc = 'Rename symbol' })
 vim.keymap.set('n', '<leader>gd', vim.lsp.buf.definition, { desc = 'Go to definition' })
 vim.keymap.set('n', '<leader>gD', vim.lsp.buf.declaration, { desc = 'Go to declaration' })
+vim.keymap.set('n', '<leader>gr', vim.lsp.buf.references, { desc = 'Go to references' })

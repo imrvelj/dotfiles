@@ -8,6 +8,10 @@ return {
     },
   },
 
+  {
+    'lewis6991/gitsigns.nvim',
+  },
+
   { 'folke/which-key.nvim',  opts = {} },
 
   {
@@ -23,7 +27,7 @@ return {
     'nvim-lualine/lualine.nvim',
     opts = {
       options = {
-        icons_enabled = false,
+        icons_enabled = true,
         theme = 'catppuccin',
         component_separators = '|',
         section_separators = '',
@@ -48,8 +52,16 @@ return {
       "MunifTanjim/nui.nvim",
     }
   },
+
   {
-    'stevearc/dressing.nvim',
-    opts = {},
+    "folke/noice.nvim",
+    event = "VeryLazy",
+    opts = {
+      -- add any options here
+    },
+    dependencies = {
+      "MunifTanjim/nui.nvim",
+      "rcarriga/nvim-notify",
+    }
   }
 }
