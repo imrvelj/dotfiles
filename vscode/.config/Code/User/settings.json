@@ -95,7 +95,7 @@
   "[scss]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
-  "workbench.colorTheme": "Catppuccin Mocha",
+  "workbench.colorTheme": "Catppuccin Macchiato",
   "[dockercompose]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },

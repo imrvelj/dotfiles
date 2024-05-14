@@ -2,6 +2,22 @@ return {
   'tpope/vim-sleuth',
 
   {
+    "christoomey/vim-tmux-navigator",
+    cmd = {
+      "TmuxNavigateLeft",
+      "TmuxNavigateDown",
+      "TmuxNavigateUp",
+      "TmuxNavigateRight",
+    },
+    keys = {
+      { "<c-h>", ":TmuxNavigateLeft<cr>" },
+      { "<c-j>", ":TmuxNavigateDown<cr>" },
+      { "<c-k>", ":TmuxNavigateUp<cr>" },
+      { "<c-l>", ":TmuxNavigateRight<cr>" },
+    },
+  },
+
+  {
     "kdheepak/lazygit.nvim",
     dependencies = {
       "nvim-lua/plenary.nvim",
@@ -36,6 +52,15 @@ return {
   },
 
   {
+    'akinsho/bufferline.nvim',
+    version = "*",
+    dependencies = 'nvim-tree/nvim-web-devicons',
+    config = function()
+      require("bufferline").setup {}
+    end
+  },
+
+  {
     'lukas-reineke/indent-blankline.nvim',
     main = 'ibl',
     opts = {},
@@ -57,11 +82,34 @@ return {
     "folke/noice.nvim",
     event = "VeryLazy",
     opts = {
-      -- add any options here
+      lsp = {
+        hover = {
+          enabled = false
+        },
+        signature = {
+          enabled = false
+        },
+        override = {
+          ["vim.lsp.util.convert_input_to_markdown_lines"] = true,
+          ["vim.lsp.util.stylize_markdown"] = true,
+          ["cmp.entry.get_documentation"] = true,
+        },
+      },
+      presets = {
+        bottom_search = true,
+        command_palette = true,
+        long_message_to_split = true,
+        inc_rename = false,
+        lsp_doc_border = false,
+      },
     },
     dependencies = {
       "MunifTanjim/nui.nvim",
       "rcarriga/nvim-notify",
     }
+  },
+  {
+    'stevearc/dressing.nvim',
+    opts = {},
   }
 }

@@ -6,6 +6,8 @@ vim.keymap.set('n', 'j', "v:count == 0 ? 'gj' : 'j'", { expr = true, silent = tr
 vim.keymap.set('n', '<C-s>', ':w<CR>', { desc = 'Save file' })
 vim.keymap.set('i', '<C-BS>', '<ESC>', { desc = 'Escape insert mode' })
 vim.keymap.set('i', '<S-BS>', '<ESC>', { desc = 'Escape insert mode' })
+vim.keymap.set('n', '[b', ':bprevious<CR>', { desc = 'Previous buffer' })
+vim.keymap.set('n', ']b', ':bnext<CR>', { desc = 'Next buffer' })
 
 -- diagnostics
 vim.keymap.set('n', '[d', vim.diagnostic.goto_prev, { desc = 'Go to previous diagnostic message' })
