@@ -81,13 +81,26 @@ return {
       end)
 
       require('mason-lspconfig').setup({
-        ensure_installed = { 'eslint', 'tsserver', 'tailwindcss', 'prismals', 'elixirls' },
+        ensure_installed = { 'eslint', 'tsserver', 'denols', 'tailwindcss', 'prismals', 'elixirls' },
         handlers = {
           lsp_zero.default_setup,
           lua_ls = function()
             local lua_opts = lsp_zero.nvim_lua_ls()
             require('lspconfig').lua_ls.setup(lua_opts)
           end,
+          denols = function()
+            local nvim_lsp = require('lspconfig')
+            nvim_lsp.denols.setup({
+              root_dir = nvim_lsp.util.root_pattern("deno.json", "deno.jsonc"),
+            })
+          end,
+          tsserver = function()
+            local nvim_lsp = require('lspconfig')
+            nvim_lsp.tsserver.setup({
+              single_file_support = false,
+              root_dir = nvim_lsp.util.root_pattern("package.json"),
+            })
+          end
         }
       })
     end
