@@ -51,12 +51,22 @@ return {
     end
   },
 
+  -- {
+  --   'sainnhe/everforest',
+  --   name = 'everforest',
+  --   priority = 1000,
+  --   config = function()
+  --     vim.cmd.colorscheme 'everforest'
+  --   end
+  -- },
+
   {
     'nvim-lualine/lualine.nvim',
     opts = {
       options = {
         icons_enabled = true,
         theme = 'catppuccin',
+        -- theme = 'everforest',
         component_separators = '|',
         section_separators = '',
       },
