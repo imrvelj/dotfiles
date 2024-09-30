@@ -2,25 +2,25 @@ return {
   'tpope/vim-sleuth',
 
   {
-    "christoomey/vim-tmux-navigator",
+    'christoomey/vim-tmux-navigator',
     cmd = {
-      "TmuxNavigateLeft",
-      "TmuxNavigateDown",
-      "TmuxNavigateUp",
-      "TmuxNavigateRight",
+      'TmuxNavigateLeft',
+      'TmuxNavigateDown',
+      'TmuxNavigateUp',
+      'TmuxNavigateRight',
     },
     keys = {
-      { "<c-h>", ":TmuxNavigateLeft<cr>" },
-      { "<c-j>", ":TmuxNavigateDown<cr>" },
-      { "<c-k>", ":TmuxNavigateUp<cr>" },
-      { "<c-l>", ":TmuxNavigateRight<cr>" },
+      { '<c-h>', ':TmuxNavigateLeft<cr>' },
+      { '<c-j>', ':TmuxNavigateDown<cr>' },
+      { '<c-k>', ':TmuxNavigateUp<cr>' },
+      { '<c-l>', ':TmuxNavigateRight<cr>' },
     },
   },
 
   {
-    "kdheepak/lazygit.nvim",
+    'kdheepak/lazygit.nvim',
     dependencies = {
-      "nvim-lua/plenary.nvim",
+      'nvim-lua/plenary.nvim',
     },
   },
 
@@ -40,7 +40,7 @@ return {
     end
   },
 
-  { 'folke/which-key.nvim',  opts = {} },
+  { 'folke/which-key.nvim',     opts = {} },
 
   {
     'catppuccin/nvim',
@@ -59,6 +59,7 @@ return {
   --     vim.cmd.colorscheme 'everforest'
   --   end
   -- },
+  { 'ellisonleao/gruvbox.nvim', priority = 1000, config = true },
 
   {
     'nvim-lualine/lualine.nvim',
@@ -66,19 +67,21 @@ return {
       options = {
         icons_enabled = true,
         theme = 'catppuccin',
-        -- theme = 'everforest',
         component_separators = '|',
         section_separators = '',
+        buffers = {
+          show_filename_only = false,
+        },
       },
     },
   },
 
   {
     'akinsho/bufferline.nvim',
-    version = "*",
+    version = '*',
     dependencies = 'nvim-tree/nvim-web-devicons',
     config = function()
-      require("bufferline").setup {}
+      require('bufferline').setup {}
     end
   },
 
@@ -88,21 +91,21 @@ return {
     opts = {},
   },
 
-  { 'numToStr/Comment.nvim', opts = {} },
+  { 'numToStr/Comment.nvim',       opts = {} },
 
   {
-    "nvim-neo-tree/neo-tree.nvim",
-    branch = "v3.x",
+    'nvim-neo-tree/neo-tree.nvim',
+    branch = 'v3.x',
     dependencies = {
-      "nvim-lua/plenary.nvim",
-      "nvim-tree/nvim-web-devicons",
-      "MunifTanjim/nui.nvim",
+      'nvim-lua/plenary.nvim',
+      'nvim-tree/nvim-web-devicons',
+      'MunifTanjim/nui.nvim',
     }
   },
 
   {
-    "folke/noice.nvim",
-    event = "VeryLazy",
+    'folke/noice.nvim',
+    event = 'VeryLazy',
     opts = {
       lsp = {
         hover = {
@@ -112,9 +115,9 @@ return {
           enabled = false
         },
         override = {
-          ["vim.lsp.util.convert_input_to_markdown_lines"] = true,
-          ["vim.lsp.util.stylize_markdown"] = true,
-          ["cmp.entry.get_documentation"] = true,
+          ['vim.lsp.util.convert_input_to_markdown_lines'] = true,
+          ['vim.lsp.util.stylize_markdown'] = true,
+          ['cmp.entry.get_documentation'] = true,
         },
       },
       presets = {
@@ -126,8 +129,8 @@ return {
       },
     },
     dependencies = {
-      "MunifTanjim/nui.nvim",
-      "rcarriga/nvim-notify",
+      'MunifTanjim/nui.nvim',
+      'rcarriga/nvim-notify',
     }
   },
 
@@ -142,8 +145,8 @@ return {
       'kevinhwang91/promise-async'
     },
     config = function()
-      vim.o.foldmethod = "expr"
-      vim.o.foldexpr = "v:lua.vim.treesitter.foldexpr()"
+      vim.o.foldmethod = 'expr'
+      vim.o.foldexpr = 'v:lua.vim.treesitter.foldexpr()'
       vim.o.foldlevel = 99
       vim.o.foldlevelstart = 99
       vim.o.foldenable = true
@@ -154,5 +157,53 @@ return {
         end
       })
     end
-  }
+  },
+
+  {
+    'garymjr/nvim-snippets',
+    keys = {
+      {
+        '<Tab>',
+        function()
+          if vim.snippet.active({ direction = 1 }) then
+            vim.schedule(function()
+              vim.snippet.jump(1)
+            end)
+            return
+          end
+          return '<Tab>'
+        end,
+        expr = true,
+        silent = true,
+        mode = 'i',
+      },
+      {
+        '<Tab>',
+        function()
+          vim.schedule(function()
+            vim.snippet.jump(1)
+          end)
+        end,
+        expr = true,
+        silent = true,
+        mode = 's',
+      },
+      {
+        '<S-Tab>',
+        function()
+          if vim.snippet.active({ direction = -1 }) then
+            vim.schedule(function()
+              vim.snippet.jump(-1)
+            end)
+            return
+          end
+          return '<S-Tab>'
+        end,
+        expr = true,
+        silent = true,
+        mode = { 'i', 's' },
+      },
+    },
+  },
+  { 'rafamadriz/friendly-snippets' }
 }

@@ -81,7 +81,7 @@ return {
       end)
 
       require('mason-lspconfig').setup({
-        ensure_installed = { 'eslint', 'tsserver', 'denols', 'tailwindcss', 'prismals', 'elixirls' },
+        ensure_installed = { 'eslint', 'ts_ls', 'denols', 'tailwindcss', 'prismals', 'elixirls' },
         handlers = {
           lsp_zero.default_setup,
           lua_ls = function()
@@ -94,9 +94,9 @@ return {
               root_dir = nvim_lsp.util.root_pattern("deno.json", "deno.jsonc"),
             })
           end,
-          tsserver = function()
+          ts_ls = function()
             local nvim_lsp = require('lspconfig')
-            nvim_lsp.tsserver.setup({
+            nvim_lsp.ts_ls.setup({
               single_file_support = false,
               root_dir = nvim_lsp.util.root_pattern("package.json"),
             })
@@ -120,8 +120,20 @@ return {
         ["javascriptreact"] = { "prettierd" },
         ["typescript"] = { "prettierd" },
         ["typescriptreact"] = { "prettierd" },
+        ["dart"] = { "dart_format" },
       },
       formatters = {},
     },
+  },
+
+  {
+    "ThePrimeagen/refactoring.nvim",
+    dependencies = {
+      "nvim-lua/plenary.nvim",
+      "nvim-treesitter/nvim-treesitter",
+    },
+    config = function()
+      require("refactoring").setup()
+    end,
   },
 }

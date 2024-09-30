@@ -54,7 +54,7 @@
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
   "explorer.confirmDragAndDrop": false,
-  "editor.lineHeight": 1.6,
+  "editor.lineHeight": 1.7,
   "auto-rename-tag.activationOnLanguage": [
     "html",
     "xml",
@@ -108,6 +108,5 @@
   "vscode-kubernetes.log-viewer.destination": "Webview",
   "vscode-kubernetes.log-viewer.wrap": false,
   "gitlens.telemetry.enabled": false,
-  "editor.fontSize": 13,
   "prisma.showPrismaDataPlatformNotification": false
 }

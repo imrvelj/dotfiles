@@ -91,6 +91,7 @@
         "on-click": "pavucontrol"
     },
     "custom/media": {
+        "interval": 1,
         "format": "{icon} {}",
         "return-type": "json",
         "max-length": 40,
