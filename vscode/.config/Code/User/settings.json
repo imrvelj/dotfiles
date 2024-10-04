@@ -95,7 +95,7 @@
   "[scss]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
-  "workbench.colorTheme": "Catppuccin Macchiato",
+  "workbench.colorTheme": "Catppuccin Mocha",
   "[dockercompose]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
@@ -108,5 +108,6 @@
   "vscode-kubernetes.log-viewer.destination": "Webview",
   "vscode-kubernetes.log-viewer.wrap": false,
   "gitlens.telemetry.enabled": false,
-  "prisma.showPrismaDataPlatformNotification": false
+  "prisma.showPrismaDataPlatformNotification": false,
+  "editor.fontSize": 13
 }

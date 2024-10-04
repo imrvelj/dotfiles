@@ -15,7 +15,8 @@ return {
       require("telescope").setup {
         pickers = {
           find_files = {
-            hidden = true
+            hidden = true,
+            ignore = true
           },
           grep_string = {
             additional_args = { "--hidden" }

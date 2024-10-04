@@ -35,7 +35,7 @@ new_window pixel 2
 new_float pixel 2
 smart_borders on
 set $default_gaps_inner 4
-set $default_gaps_outer 4
+set $default_gaps_outer 8
 gaps inner $default_gaps_inner
 gaps outer $default_gaps_outer
 
@@ -46,7 +46,7 @@ floating_modifier $mod
 # --------
 
 # Terminal
-bindsym $mod+Return exec wezterm
+bindsym $mod+Return exec kitty
 
 # Kill focused window
 bindsym $mod+q kill
@@ -181,7 +181,7 @@ exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 exec_always --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
 
 # Picom
-# exec_always picom --unredir-if-possible
+exec_always --no-startup-id picom
 
 # autolock
 exec_always xidlehook \
