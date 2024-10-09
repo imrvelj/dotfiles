@@ -40,7 +40,7 @@ return {
     end
   },
 
-  { 'folke/which-key.nvim',     opts = {} },
+  { 'folke/which-key.nvim' },
 
   {
     'catppuccin/nvim',
@@ -50,16 +50,6 @@ return {
       vim.cmd.colorscheme 'catppuccin'
     end
   },
-
-  -- {
-  --   'sainnhe/everforest',
-  --   name = 'everforest',
-  --   priority = 1000,
-  --   config = function()
-  --     vim.cmd.colorscheme 'everforest'
-  --   end
-  -- },
-  { 'ellisonleao/gruvbox.nvim', priority = 1000, config = true },
 
   {
     'nvim-lualine/lualine.nvim',
@@ -91,7 +81,7 @@ return {
     opts = {},
   },
 
-  { 'numToStr/Comment.nvim',       opts = {} },
+  { 'numToStr/Comment.nvim' },
 
   {
     'nvim-neo-tree/neo-tree.nvim',
