@@ -135,10 +135,9 @@ mode "resize" {
   bindsym Escape mode "default"
 }
 
-
 # Scrot
-bindsym --release Shift+Print exec "scrot -m '/home/rejd/Pictures/screenshots/%s_%H%M_%d.%m.%Y_$wx$h.png'"
-bindsym --release Print exec "scrot -s '/home/rejd/Pictures/screenshots/%s_%H%M_%d%m%Y_$wx$h.png' -e 'xclip -selection clipboard -target image/png -i $f'"
+bindsym --release Shift+Print exec "scrot -m '~/Pictures/screenshots/%s_%H%M_%d.%m.%Y_$wx$h.png'"
+bindsym --release Print exec "scrot -s '~/Pictures/screenshots/%s_%H%M_%d%m%Y_$wx$h.png' -e 'xclip -selection clipboard -target image/png -i $f'"
 
 # Media player controls
 bindsym XF86AudioRaiseVolume exec --no-startup-id pactl -- set-sink-volume @DEFAULT_SINK@ +5%

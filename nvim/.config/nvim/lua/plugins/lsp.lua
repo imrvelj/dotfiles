@@ -8,6 +8,7 @@ return {
       'hrsh7th/cmp-nvim-lsp',
       'williamboman/mason.nvim',
       'williamboman/mason-lspconfig.nvim',
+      'b0o/schemastore.nvim',
     },
     config = function()
       local lsp_zero = require('lsp-zero')
@@ -49,6 +50,22 @@ return {
             nvim_lsp.ts_ls.setup({
               single_file_support = false,
               root_dir = nvim_lsp.util.root_pattern("package.json"),
+            })
+          end,
+          jsonls = function()
+            local nvim_lsp = require('lspconfig')
+            nvim_lsp.jsonls.setup({
+              settings = {
+                json = {
+                  schemas = require('schemastore').json.schemas {
+                    -- select = {
+                    --   'Renovate',
+                    --   'GitHub Workflow Template Properties'
+                    -- }
+                  },
+                  validate = { enable = true },
+                }
+              }
             })
           end
         }
@@ -164,5 +181,9 @@ return {
         desc = 'Quickfix List (Trouble)',
       },
     },
+  },
+
+  {
+    'artemave/workspace-diagnostics.nvim'
   }
 }

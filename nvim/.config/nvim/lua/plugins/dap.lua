@@ -4,7 +4,6 @@ return {
     'nvim-neotest/nvim-nio',
     'williamboman/mason.nvim',
     'jay-babu/mason-nvim-dap.nvim',
-    'leoluz/nvim-dap-go',
     'rcarriga/nvim-dap-ui',
   },
   config = function()
@@ -15,7 +14,9 @@ return {
       automatic_setup = true,
       handlers = {},
       ensure_installed = {
-        'delve',
+        'js-debug-adapter',
+        'chrome-debug-adapter',
+        'node-debug2-adapter',
       },
     }
 

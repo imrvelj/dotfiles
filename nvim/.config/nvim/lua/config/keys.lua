@@ -9,6 +9,11 @@ vim.keymap.set('i', '<C-BS>', '<ESC>', { desc = 'Escape insert mode' })
 vim.keymap.set('i', '<S-BS>', '<ESC>', { desc = 'Escape insert mode' })
 vim.keymap.set('n', '[b', ':bprevious<CR>', { desc = 'Previous buffer' })
 vim.keymap.set('n', ']b', ':bnext<CR>', { desc = 'Next buffer' })
+-- split resize
+vim.keymap.set('n', '<M-Up>', ':resize +2<CR>', { silent = true })
+vim.keymap.set('n', '<M-Down>', ':resize -2<CR>', { silent = true })
+vim.keymap.set('n', '<M-Left>', ':vertical resize -2<CR>', { silent = true })
+vim.keymap.set('n', '<M-Right>', ':vertical resize +2<CR>', { silent = true })
 
 -- diagnostics
 vim.keymap.set('n', '[d', vim.diagnostic.goto_prev, { desc = 'Go to previous diagnostic message' })
