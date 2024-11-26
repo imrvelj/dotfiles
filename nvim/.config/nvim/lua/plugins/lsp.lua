@@ -42,6 +42,7 @@ return {
           denols = function()
             local nvim_lsp = require('lspconfig')
             nvim_lsp.denols.setup({
+              single_file_support = false,
               root_dir = nvim_lsp.util.root_pattern("deno.json", "deno.jsonc"),
             })
           end,
@@ -94,6 +95,7 @@ return {
     end
   },
 
+  -- Treesitter
   {
     'nvim-treesitter/nvim-treesitter',
     dependencies = {
@@ -182,8 +184,4 @@ return {
       },
     },
   },
-
-  {
-    'artemave/workspace-diagnostics.nvim'
-  }
 }

@@ -37,6 +37,8 @@ vim.o.completeopt = 'menuone,noselect'
 
 vim.opt.scrolloff = 10
 
+vim.opt.cursorline = true
+
 -- Highlight yanks
 local highlight_group = vim.api.nvim_create_augroup('YankHighlight', { clear = true })
 vim.api.nvim_create_autocmd('TextYankPost', {

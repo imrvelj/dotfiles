@@ -63,6 +63,14 @@ return {
           show_filename_only = false,
         },
       },
+      sections = {
+        lualine_a = { 'mode' },
+        lualine_b = { 'branch', 'diff', 'diagnostics' },
+        lualine_c = { { 'filename', path = 1 } },
+        lualine_x = { 'encoding', 'fileformat', 'filetype' },
+        lualine_y = { 'progress' },
+        lualine_z = { 'location' }
+      },
     },
   },
 
@@ -150,50 +158,9 @@ return {
   },
 
   {
-    'garymjr/nvim-snippets',
-    keys = {
-      {
-        '<Tab>',
-        function()
-          if vim.snippet.active({ direction = 1 }) then
-            vim.schedule(function()
-              vim.snippet.jump(1)
-            end)
-            return
-          end
-          return '<Tab>'
-        end,
-        expr = true,
-        silent = true,
-        mode = 'i',
-      },
-      {
-        '<Tab>',
-        function()
-          vim.schedule(function()
-            vim.snippet.jump(1)
-          end)
-        end,
-        expr = true,
-        silent = true,
-        mode = 's',
-      },
-      {
-        '<S-Tab>',
-        function()
-          if vim.snippet.active({ direction = -1 }) then
-            vim.schedule(function()
-              vim.snippet.jump(-1)
-            end)
-            return
-          end
-          return '<S-Tab>'
-        end,
-        expr = true,
-        silent = true,
-        mode = { 'i', 's' },
-      },
+    'vuki656/package-info.nvim',
+    dependencies = {
+      'MunifTanjim/nui.nvim'
     },
-  },
-  { 'rafamadriz/friendly-snippets' }
+  }
 }

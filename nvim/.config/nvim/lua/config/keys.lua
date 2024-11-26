@@ -28,7 +28,7 @@ vim.keymap.set('n', '<leader><leader>',
 vim.keymap.set('n', '<leader>ff',
   ':Telescope find_files find_command=rg,--ignore,--hidden,--files prompt_prefix=🔍<CR>',
   { desc = 'Find files' })
-vim.keymap.set('n', '<leader>fb', ':Telescope buffers <CR>', { desc = 'Find files' })
+vim.keymap.set('n', '<leader>b', ':Telescope buffers <CR>', { desc = 'Go to file in [b]uffers' })
 vim.keymap.set('n', '<leader>fg', ':Telescope live_grep <CR>', { desc = 'Grep' })
 vim.keymap.set('n', '<leader>fr', ':Telescope lsp_references<CR>', { desc = 'Find code references' })
 vim.keymap.set('n', '<leader>fd', ':Telescope lsp_definitions<CR>', { desc = 'Find code definitions' })
@@ -50,3 +50,5 @@ vim.keymap.set('n', '<leader>gr', vim.lsp.buf.references, { desc = 'Go to refere
 vim.keymap.set('n', '<C-f>', ':EslintFixAll<CR>', { desc = 'ESLint fix file' })
 
 vim.keymap.set('n', '<F8>', ':DapContinue<CR>', { desc = 'Debug: Start/Continue' })
+
+vim.keymap.set('n', '<leader>ns', "<cmd>lua require('package-info').show()<cr>", { silent = true, noremap = true })
