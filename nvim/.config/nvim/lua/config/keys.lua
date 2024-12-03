@@ -22,21 +22,23 @@ vim.keymap.set('n', '<leader>e', vim.diagnostic.open_float, { desc = 'Open float
 vim.keymap.set('n', '<leader>q', vim.diagnostic.setloclist, { desc = 'Open diagnostics list' })
 
 -- Telescope
-vim.keymap.set('n', '<leader><leader>',
-  ':Telescope find_files find_command=rg,--ignore,--hidden,--files prompt_prefix=🔍<CR>',
-  { desc = 'Find files' })
-vim.keymap.set('n', '<leader>ff',
-  ':Telescope find_files find_command=rg,--ignore,--hidden,--files prompt_prefix=🔍<CR>',
-  { desc = 'Find files' })
-vim.keymap.set('n', '<leader>b', ':Telescope buffers <CR>', { desc = 'Go to file in [b]uffers' })
-vim.keymap.set('n', '<leader>fg', ':Telescope live_grep <CR>', { desc = 'Grep' })
-vim.keymap.set('n', '<leader>fr', ':Telescope lsp_references<CR>', { desc = 'Find code references' })
-vim.keymap.set('n', '<leader>fd', ':Telescope lsp_definitions<CR>', { desc = 'Find code definitions' })
-vim.keymap.set('n', '<leader>fi', ':Telescope lsp_implementations<CR>', { desc = 'Find code implementations' })
-vim.keymap.set('n', '<leader>fs', ':Telescope lsp_workspace_symbols<CR>', { desc = 'Find workspace symbols' })
+local git_files_cmd = ':Telescope git_files<CR>'
+local find_files_cmd = ':Telescope find_files find_command=rg,--ignore,--hidden,--files prompt_prefix=🔍<CR>'
+vim.keymap.set('n', '<leader><leader>', git_files_cmd, { desc = 'Find files', silent = true })
+vim.keymap.set('n', '<leader>ff', git_files_cmd, { desc = 'Find files', silent = true })
+vim.keymap.set('n', '<leader>F', find_files_cmd, { desc = 'Find files', silent = true })
+
+vim.keymap.set('n', '<leader>b', ':Telescope buffers <CR>', { desc = 'Go to file in [b]uffers', silent = true })
+vim.keymap.set('n', '<leader>fg', ':Telescope live_grep <CR>', { desc = 'Grep', silent = true })
+vim.keymap.set('n', '<leader>fr', ':Telescope lsp_references<CR>', { desc = 'Find code references', silent = true })
+vim.keymap.set('n', '<leader>fd', ':Telescope lsp_definitions<CR>', { desc = 'Find code definitions', silent = true })
+vim.keymap.set('n', '<leader>fi', ':Telescope lsp_implementations<CR>',
+  { desc = 'Find code implementations', silent = true })
+vim.keymap.set('n', '<leader>fs', ':Telescope lsp_workspace_symbols<CR>',
+  { desc = 'Find workspace symbols', silent = true })
 
 -- Tree
-vim.keymap.set('n', '<leader>e', ':Neotree toggle reveal <CR>', { desc = 'Folder tree' })
+vim.keymap.set('n', '<leader>e', ':Neotree toggle reveal <CR>', { desc = 'Directory Tre[e]', silent = true })
 
 -- Git
 vim.keymap.set('n', '<leader>gg', ':LazyGit<CR>', { desc = 'LazyGit' })
