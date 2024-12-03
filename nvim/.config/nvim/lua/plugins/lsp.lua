@@ -39,6 +39,7 @@ return {
         ensure_installed = { 'eslint', 'ts_ls', 'denols', 'tailwindcss', 'prismals', 'elixirls' },
         handlers = {
           lsp_zero.default_setup,
+
           denols = function()
             local nvim_lsp = require('lspconfig')
             nvim_lsp.denols.setup({
@@ -46,6 +47,7 @@ return {
               root_dir = nvim_lsp.util.root_pattern("deno.json", "deno.jsonc"),
             })
           end,
+
           ts_ls = function()
             local nvim_lsp = require('lspconfig')
             nvim_lsp.ts_ls.setup({
@@ -53,6 +55,35 @@ return {
               root_dir = nvim_lsp.util.root_pattern("package.json"),
             })
           end,
+
+          lua_ls = function()
+            local nvim_lsp = require('lspconfig')
+            nvim_lsp.lua_ls.setup({
+              on_init = function(client)
+                if client.workspace_folders then
+                  local path = client.workspace_folders[1].name
+                  if vim.loop.fs_stat(path .. '/.luarc.json') or vim.loop.fs_stat(path .. '/.luarc.jsonc') then
+                    return
+                  end
+                end
+                client.config.settings.Lua = vim.tbl_deep_extend('force', client.config.settings.Lua, {
+                  runtime = {
+                    version = 'LuaJIT'
+                  },
+                  workspace = {
+                    checkThirdParty = false,
+                    library = {
+                      vim.env.VIMRUNTIME
+                    }
+                  }
+                })
+              end,
+              settings = {
+                Lua = {}
+              }
+            })
+          end,
+
           jsonls = function()
             local nvim_lsp = require('lspconfig')
             nvim_lsp.jsonls.setup({
