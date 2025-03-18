@@ -1,36 +1,36 @@
 return {
   {
-    'VonHeikemen/lsp-zero.nvim',
-    branch = 'v4.x',
+    'neovim/nvim-lspconfig',
     dependencies = {
-      'neovim/nvim-lspconfig',
       'hrsh7th/nvim-cmp',
       'hrsh7th/cmp-nvim-lsp',
+      'hrsh7th/cmp-buffer',
       'williamboman/mason.nvim',
       'williamboman/mason-lspconfig.nvim',
       'b0o/schemastore.nvim',
     },
     config = function()
-      local lsp_zero = require('lsp-zero')
+      local cmp = require('cmp')
+      local cmp_lsp = require('cmp_nvim_lsp')
+      local capabilities = vim.tbl_deep_extend(
+        "force",
+        {},
+        vim.lsp.protocol.make_client_capabilities(),
+        cmp_lsp.default_capabilities())
 
-      local lsp_attach = function(_, bufnr)
-        local opts = { buffer = bufnr }
-        vim.keymap.set('n', 'K', '<cmd>lua vim.lsp.buf.hover()<cr>', opts)
-        vim.keymap.set('n', 'gd', '<cmd>lua vim.lsp.buf.definition()<cr>', opts)
-        vim.keymap.set('n', 'gD', '<cmd>lua vim.lsp.buf.declaration()<cr>', opts)
-        vim.keymap.set('n', 'gi', '<cmd>lua vim.lsp.buf.implementation()<cr>', opts)
-        vim.keymap.set('n', 'go', '<cmd>lua vim.lsp.buf.type_definition()<cr>', opts)
-        vim.keymap.set('n', 'gr', '<cmd>lua vim.lsp.buf.references()<cr>', opts)
-        vim.keymap.set('n', 'gs', '<cmd>lua vim.lsp.buf.signature_help()<cr>', opts)
-        vim.keymap.set('n', '<F2>', '<cmd>lua vim.lsp.buf.rename()<cr>', opts)
-        vim.keymap.set({ 'n', 'x' }, '<F3>', '<cmd>lua vim.lsp.buf.format({async = true})<cr>', opts)
-        vim.keymap.set('n', '<F4>', '<cmd>lua vim.lsp.buf.code_action()<cr>', opts)
-      end
-
-      lsp_zero.extend_lspconfig({
-        sign_text = true,
-        lsp_attach = lsp_attach,
-        capabilities = require('cmp_nvim_lsp').default_capabilities(),
+      vim.api.nvim_create_autocmd('LspAttach', {
+        desc = 'LSP commands',
+        callback = function(event)
+          local opts = { buffer = event.buf }
+          vim.keymap.set('n', 'K', '<cmd>lua vim.lsp.buf.hover()<cr>', opts)
+          vim.keymap.set('n', 'gd', '<cmd>lua vim.lsp.buf.definition()<cr>', opts)
+          vim.keymap.set('n', 'gD', '<cmd>lua vim.lsp.buf.declaration()<cr>', opts)
+          vim.keymap.set('n', 'gi', '<cmd>lua vim.lsp.buf.implementation()<cr>', opts)
+          vim.keymap.set('n', 'go', '<cmd>lua vim.lsp.buf.type_definition()<cr>', opts)
+          vim.keymap.set('n', 'gr', '<cmd>lua vim.lsp.buf.references()<cr>', opts)
+          vim.keymap.set('n', 'gs', '<cmd>lua vim.lsp.buf.signature_help()<cr>', opts)
+          vim.keymap.set('n', '<F4>', '<cmd>lua vim.lsp.buf.code_action()<cr>', opts)
+        end,
       })
 
       -- Mason
@@ -38,77 +38,36 @@ return {
       require('mason-lspconfig').setup({
         ensure_installed = { 'eslint', 'ts_ls', 'denols', 'tailwindcss', 'prismals', 'elixirls' },
         handlers = {
-          lsp_zero.default_setup,
-
+          function(server_name)
+            require("lspconfig")[server_name].setup {
+              capabilities = capabilities
+            }
+          end,
           denols = function()
-            local nvim_lsp = require('lspconfig')
-            nvim_lsp.denols.setup({
+            local lsp = require('lspconfig')
+
+            lsp.denols.setup({
               single_file_support = false,
-              root_dir = nvim_lsp.util.root_pattern("deno.json", "deno.jsonc"),
+              root_dir = lsp.util.root_pattern('deno.json')
             })
           end,
-
           ts_ls = function()
-            local nvim_lsp = require('lspconfig')
-            nvim_lsp.ts_ls.setup({
+            local lsp = require('lspconfig')
+
+            lsp.ts_ls.setup({
               single_file_support = false,
-              root_dir = nvim_lsp.util.root_pattern("package.json"),
-            })
-          end,
-
-          lua_ls = function()
-            local nvim_lsp = require('lspconfig')
-            nvim_lsp.lua_ls.setup({
-              on_init = function(client)
-                if client.workspace_folders then
-                  local path = client.workspace_folders[1].name
-                  if vim.loop.fs_stat(path .. '/.luarc.json') or vim.loop.fs_stat(path .. '/.luarc.jsonc') then
-                    return
-                  end
-                end
-                client.config.settings.Lua = vim.tbl_deep_extend('force', client.config.settings.Lua, {
-                  runtime = {
-                    version = 'LuaJIT'
-                  },
-                  workspace = {
-                    checkThirdParty = false,
-                    library = {
-                      vim.env.VIMRUNTIME
-                    }
-                  }
-                })
-              end,
-              settings = {
-                Lua = {}
-              }
-            })
-          end,
-
-          jsonls = function()
-            local nvim_lsp = require('lspconfig')
-            nvim_lsp.jsonls.setup({
-              settings = {
-                json = {
-                  schemas = require('schemastore').json.schemas {
-                    -- select = {
-                    --   'Renovate',
-                    --   'GitHub Workflow Template Properties'
-                    -- }
-                  },
-                  validate = { enable = true },
-                }
-              }
+              root_dir = lsp.util.root_pattern('turbo.json', 'tsconfig.json', 'package.json')
             })
           end
         }
       })
 
-      -- Cmp
-      local cmp = require('cmp')
-
       cmp.setup({
         sources = {
-          { name = 'nvim_lsp' },
+          { name = "nvim_lsp", max_item_count = 5 },
+          { name = "buffer",   max_item_count = 5 },
+          { name = "path",     max_item_count = 3 },
+          -- { name = "luasnip",  max_item_count = 3 },
         },
         snippet = {
           expand = function(args)
@@ -126,25 +85,6 @@ return {
     end
   },
 
-  -- Treesitter
-  {
-    'nvim-treesitter/nvim-treesitter',
-    dependencies = {
-      'nvim-treesitter/nvim-treesitter-textobjects',
-    },
-    build = ':TSUpdate',
-    config = function()
-      local configs = require("nvim-treesitter.configs")
-
-      configs.setup({
-        ensure_installed = { "c", "lua", "vim", "vimdoc", "query", "elixir", "heex", "javascript", "typescript", "html" },
-        auto_install = true,
-        highlight = { enable = true, disable = {}, additional_vim_regex_highlighting = false },
-        indent = { enable = true },
-      })
-    end,
-  },
-
   -- Formatting
   {
     "stevearc/conform.nvim",
@@ -155,10 +95,10 @@ return {
       formatters_by_ft = {
         ["markdown"] = { { "prettierd", "prettier" } },
         ["markdown.mdx"] = { { "prettierd", "prettier" } },
-        ["javascript"] = { "deno_fmt", "prettierd" },
-        ["javascriptreact"] = { "deno_fmt", "prettierd" },
-        ["typescript"] = { "deno_fmt", "prettierd" },
-        ["typescriptreact"] = { "deno_fmt", "prettierd" },
+        ["javascript"] = { "prettierd", "prettier" },
+        ["javascriptreact"] = { "prettierd", "prettier" },
+        ["typescript"] = { "prettierd", "prettier" },
+        ["typescriptreact"] = { "prettierd", "prettier" },
         ["dart"] = { "dart_format" },
       },
       formatters = {},
