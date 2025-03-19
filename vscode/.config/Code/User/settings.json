@@ -1,12 +1,14 @@
 {
-  "files.autoSave": "onFocusChange",
-  "editor.fontFamily": "'Monaspace Neon', monospace",
-  "editor.tabSize": 4,
+  "editor.fontFamily": "'JetBrains Mono', monospace",
+  "editor.fontSize": 13,
+  "editor.lineHeight": 1.7,
+  "editor.tabSize": 2,
   "editor.cursorStyle": "line",
   "editor.insertSpaces": false,
   "editor.lineNumbers": "on",
   "editor.wordSeparators": "/\\()\"':,.;<>~!@#$%^&*|+=[]{}`?-",
   "editor.wordWrap": "off",
+  "files.autoSave": "onFocusChange",
   "todo-tree.general.tags": [
     "BUG",
     "HACK",
@@ -54,7 +56,6 @@
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
   "explorer.confirmDragAndDrop": false,
-  "editor.lineHeight": 1.7,
   "auto-rename-tag.activationOnLanguage": [
     "html",
     "xml",
@@ -108,6 +109,5 @@
   "vscode-kubernetes.log-viewer.destination": "Webview",
   "vscode-kubernetes.log-viewer.wrap": false,
   "gitlens.telemetry.enabled": false,
-  "prisma.showPrismaDataPlatformNotification": false,
-  "editor.fontSize": 13
+  "prisma.showPrismaDataPlatformNotification": false
 }

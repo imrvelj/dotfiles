@@ -19,6 +19,7 @@ alias gp="git push"
 alias glog="git log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative"
 alias dev="cd $HOME/projects/"
 alias apdejt="eos-update && yay -Syu"
+alias mirrors='sudo reflector --protocol https --verbose --latest 25 --sort rate --save /etc/pacman.d/mirrorlist && eos-rankmirrors --verbose'
 
 # (Neo)Vim
 alias v="nvim"

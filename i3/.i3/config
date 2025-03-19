@@ -136,8 +136,8 @@ mode "resize" {
 }
 
 # Scrot
-bindsym --release Shift+Print exec "scrot -m '~/Pictures/screenshots/%s_%H%M_%d.%m.%Y_$wx$h.png'"
-bindsym --release Print exec "scrot -s '~/Pictures/screenshots/%s_%H%M_%d%m%Y_$wx$h.png' -e 'xclip -selection clipboard -target image/png -i $f'"
+bindsym --release Shift+Print exec "scrot -s $HOME/Pictures/screenshots/%s_%H%M_%d.%m.%Y_$wx$h.png"
+bindsym --release Print exec "scrot -s $HOME/Pictures/screenshots/%s_%H%M_%d%m%Y_$wx$h.png -e 'xclip -selection clipboard -target image/png -i $f'"
 
 # Media player controls
 bindsym XF86AudioRaiseVolume exec --no-startup-id pactl -- set-sink-volume @DEFAULT_SINK@ +5%
@@ -177,6 +177,7 @@ for_window [class="*.exe"] floating enable
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 exec_always --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
 exec_always --no-startup-id picom
+
 exec_always xidlehook \
   --not-when-fullscreen \
   --not-when-audio \
@@ -189,4 +190,4 @@ exec_always xidlehook \
   --timer 3600 \
     'systemctl suspend' \
     ''
-exec_always --no-startup-id feh --bg-scale /data/wall/uw/wallhaven-dgy9po.png
+exec_always --no-startup-id feh --bg-scale /data/wall/uw/wallhaven-pkp8g9.png

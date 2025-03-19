@@ -5,10 +5,10 @@ vim.keymap.set('n', 'j', "v:count == 0 ? 'gj' : 'j'", { expr = true, silent = tr
 -- regular stuff
 vim.keymap.set('n', '<C-s>', ':w<CR>', { desc = 'Save file' })
 vim.keymap.set('n', '<C-q>', ':q<CR>', { desc = 'Quit file' })
-vim.keymap.set('i', '<C-BS>', '<ESC>', { desc = 'Escape insert mode' })
-vim.keymap.set('i', '<S-BS>', '<ESC>', { desc = 'Escape insert mode' })
+vim.keymap.set('n', '<C-b>', ':bufdo bd', { desc = 'Close buffers' })
 vim.keymap.set('n', '[b', ':bprevious<CR>', { desc = 'Previous buffer' })
 vim.keymap.set('n', ']b', ':bnext<CR>', { desc = 'Next buffer' })
+
 -- split resize
 vim.keymap.set('n', '<M-Up>', ':resize +2<CR>', { silent = true })
 vim.keymap.set('n', '<M-Down>', ':resize -2<CR>', { silent = true })
@@ -22,11 +22,11 @@ vim.keymap.set('n', '<leader>e', vim.diagnostic.open_float, { desc = 'Open float
 vim.keymap.set('n', '<leader>q', vim.diagnostic.setloclist, { desc = 'Open diagnostics list' })
 
 -- Telescope
-local git_files_cmd = ':Telescope git_files<CR>'
+-- local git_files_cmd = ':Telescope git_files<CR>'
 local find_files_cmd = ':Telescope find_files find_command=rg,--ignore,--hidden,--files prompt_prefix=🔍<CR>'
-vim.keymap.set('n', '<leader><leader>', git_files_cmd, { desc = 'Find files', silent = true })
-vim.keymap.set('n', '<leader>ff', git_files_cmd, { desc = 'Find files', silent = true })
-vim.keymap.set('n', '<leader>F', find_files_cmd, { desc = 'Find files', silent = true })
+vim.keymap.set('n', '<leader><leader>', find_files_cmd, { desc = 'Find files', silent = true })
+vim.keymap.set('n', '<leader>ff', find_files_cmd, { desc = 'Find files', silent = true })
+-- vim.keymap.set('n', '<leader>F', find_files_cmd, { desc = 'Find files', silent = true })
 
 vim.keymap.set('n', '<leader>b', ':Telescope buffers <CR>', { desc = 'Go to file in [b]uffers', silent = true })
 vim.keymap.set('n', '<leader>fg', ':Telescope live_grep <CR>', { desc = 'Grep', silent = true })

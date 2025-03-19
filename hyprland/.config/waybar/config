@@ -1,10 +1,15 @@
 {
-    "height": 30,
-    "spacing": 4,
+    "height": 36,
+    "spacing": 16,
     "layer": "top",
-    "modules-left": ["hyprland/workspaces", "custom/media"],
-    "modules-center": ["hyprland/window"],
-    "modules-right": ["pulseaudio", "hyprland/language", "tray", "clock"],
+    "margin-top": 8,
+    "margin-left": 8,
+    "margin-right": 8,
+
+    "modules-left": ["hyprland/workspaces", "hyprland/window"],
+    "modules-center": ["custom/weather"],
+    "modules-right": ["mpris", "wireplumber", "tray", "clock"],
+
     "hyprland/workspaces": {
       "disable-scroll": true,
       "all-outputs": true,
@@ -26,82 +31,48 @@
         "default": ""
       }
     },
+
     "hyprland/mode": {
         "format": "<span style=\"italic\">{}</span>"
     },
-    "mpd": {
-        "format": "{stateIcon} {consumeIcon}{randomIcon}{repeatIcon}{singleIcon}{artist} - {album} - {title} ({elapsedTime:%M:%S}/{totalTime:%M:%S}) ⸨{songPosition}|{queueLength}⸩ {volume}% ",
-        "format-disconnected": "Disconnected ",
-        "format-stopped": "{consumeIcon}{randomIcon}{repeatIcon}{singleIcon}Stopped ",
-        "unknown-tag": "N/A",
-        "interval": 2,
-        "consume-icons": {
-            "on": " "
-        },
-        "random-icons": {
-            "off": "<span color=\"#f53c3c\"></span> ",
-            "on": " "
-        },
-        "repeat-icons": {
-            "on": " "
-        },
-        "single-icons": {
-            "on": "1 "
-        },
-        "state-icons": {
-            "paused": "",
-            "playing": ""
-        },
-        "tooltip-format": "MPD (connected)",
-        "tooltip-format-disconnected": "MPD (disconnected)"
+
+    "mpris": {
+      "format": "{player_icon} {player} | {title} - {artist}",
+      "format-paused": "{status_icon} <i>{dynamic}</i>",
+      "player-icons": {
+        "default": "▶",
+        "mpv": "🎵"
+      },
+      "status-icons": {
+        "paused": "⏸"
+      },
     },
-    "idle_inhibitor": {
-        "format": "{icon}",
-        "format-icons": {
-            "activated": "",
-            "deactivated": ""
-        }
-    },
+
     "tray": {
         // "icon-size": 21,
-        "spacing": 10
+        "spacing": 8
     },
+
     "clock": {
-        "format": " {:%H:%M}",
+        "format": "{:%a %b %d %I:%M %p}",
         "format-alt": " {:%Y-%m-%d}",
         "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
     },
-    "pulseaudio": {
-        // "scroll-step": 1, // %, can be a float
-        "format": "{volume}% {icon} {format_source}",
-        "format-bluetooth": "{volume}% {icon} {format_source}",
-        "format-bluetooth-muted": " {icon} {format_source}",
-        "format-muted": " {format_source}",
-        "format-source": "{volume}% ",
-        "format-source-muted": "",
-        "format-icons": {
-            "headphone": "",
-            "hands-free": "",
-            "headset": "",
-            "phone": "",
-            "portable": "",
-            "car": "",
-            "default": ["", "", ""]
-        },
-        "on-click": "pavucontrol"
+
+    "wireplumber": {
+      "format": "{volume}% {icon} {node_name}",
+      "format-muted": "",
+      "on-click": "pulseuadio-control togmute",
+      "on-click-right": "pulseaudio-control next-node",
+      "format-icons": ["", "", ""]
     },
-    "custom/media": {
-        "interval": 1,
-        "format": "{icon} {}",
-        "return-type": "json",
-        "max-length": 40,
-        "format-icons": {
-            "spotify": "",
-            "default": "🎜"
-        },
-        "escape": true,
-        "exec": "$HOME/.config/waybar/mediaplayer.sh 2> /dev/null" // Script in resources folder
-        // "exec": "$HOME/.config/waybar/mediaplayer.py --player spotify 2> /dev/null" // Filter player based on name
-    }
+
+    "custom/weather": {
+      "exec": "${HOME}/.config/waybar/wttr.sh Zagreb+Croatia",
+      "return-type": "json",
+      "format": "{}",
+      "tooltip": true,
+      "interval": 3600
+    },
 }
 
