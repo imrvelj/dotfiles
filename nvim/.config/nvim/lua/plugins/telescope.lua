@@ -1,6 +1,7 @@
 return {
   {
-    "telescope.nvim",
+    "nvim-telescope/telescope.nvim",
+
     dependencies = {
       'nvim-lua/plenary.nvim',
       {
@@ -11,6 +12,7 @@ return {
         end
       }
     },
+
     config = function()
       require("telescope").setup {
         pickers = {
