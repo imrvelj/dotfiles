@@ -34,8 +34,10 @@ alias cat="bat"
 # Docker
 alias dockup="docker-compose up -d"
 alias dockkill="docker-compose kill"
+
 alias rmnode="find . -name "node_modules" -exec rm -rf '{}' + "
 alias obs="VK_ICD_FILENAMES=/usr/share/vulkan/icd.d/amd_pro_icd64.json:/usr/share/vulkan/icd.d/amd_pro_icd32.json devour obs"
+alias androidstudio="~/.local/share/JetBrains/Toolbox/apps/android-studio/bin/studio.sh"
 
 export PATH=$PATH:$HOME/.volta/bin
 export PATH=$PATH:$HOME/.local/bin
