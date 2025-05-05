@@ -25,25 +25,20 @@ alias v="nvim"
 alias vim="nvim"
 alias vedit="nvim ~/dotfiles/nvim/.config/nvim/init.vim"
 
-alias i3edit="nvim ~/dotfiles/i3/.i3/config"
 alias tns="tmux new -s"
 alias dotedit="cd ~/dotfiles && nvim"
 # alias cat="bat"
-
-# Env
-export BROWSER=brave
 
 # Docker
 alias dockup="docker-compose up -d"
 alias dockkill="docker-compose kill"
 alias rmnode="find . -name "node_modules" -exec rm -rf '{}' + "
-alias obs="VK_ICD_FILENAMES=/usr/share/vulkan/icd.d/amd_pro_icd64.json:/usr/share/vulkan/icd.d/amd_pro_icd32.json devour obs"
 
 export PATH=$PATH:$HOME/.volta/bin
 export PATH=$PATH:$HOME/.local/bin
 
 # Android
-export ANDROID_HOME=$HOME/Android/Sdk
+export ANDROID_HOME=$HOME/Library/Android/sdk
 export PATH=$PATH:$ANDROID_HOME/tools
 export PATH=$PATH:$ANDROID_HOME/platform-tools
 
@@ -52,7 +47,7 @@ export FLUTTER_HOME=$HOME/flutter
 export PATH=$PATH:$FLUTTER_HOME/bin
 
 # Deno
-export DENO_INSTALL="/home/rejd/.deno"
+export DENO_INSTALL="$HOME/.deno"
 export PATH="$DENO_INSTALL/bin:$PATH"
 
 # Dotnet
@@ -64,3 +59,8 @@ export PATH=$PATH:$HOME/.cargo/bin
 export VOLTA_HOME="$HOME/.volta"
 export PATH="$VOLTA_HOME/bin:$PATH"
 
+export BROWSER=brave
+
+# ruby
+export PATH="/opt/homebrew/opt/ruby/bin:$PATH"
+export PATH="$PATH:$HOME/.rvm/bin"

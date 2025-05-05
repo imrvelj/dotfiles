@@ -1,7 +1,2 @@
-export TERMINAL=wezterm
-export VOLTA_HOME="$HOME/.volta"
-export PATH="$VOLTA_HOME/bin:$HOME/.local/bin:$PATH"
-export SSH_AUTH_SOCK=$XDG_RUNTIME_DIR/ssh-agent.socket
-
-. "$HOME/.cargo/env"
-
+eval "$(/opt/homebrew/bin/brew shellenv)"
+eval "$(rbenv init - --no-rehash zsh)"
